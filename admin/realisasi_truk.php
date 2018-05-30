@@ -1,5 +1,5 @@
 <?php
-	$cu=$_GET['cus'];
+	$nopol=$_GET['nopol'];
     include 'php/top.php';
     include 'php/header.php';
     include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
@@ -31,7 +31,7 @@
 
                 <div class="col-sm-12">
                     <div class="white-box">
-					     <h3 class="box-title m-b-0"><a href="spk.php?spk=<?=$cu?>" class="btn btn-alt btn-sm btn-default toggle-bordered enable-tooltip" title="Kembali">Kembali</a></h3>
+					     <h3 class="box-title m-b-0"><a href="laporan_truk.php?nopol=<?=$nopol?>" class="btn btn-alt btn-sm btn-default toggle-bordered enable-tooltip" title="Kembali">Kembali</a></h3>
                         <h3 class="box-title m-b-0">Data Realisasi SPK</h3>
                         <div class="table-responsive">
                             <table id="example23" class="display nowrap" cellspacing="0" width="100%">
@@ -58,8 +58,8 @@
                                 </thead>
                                 <tbody>
 								<?php
-								$id=$_GET['id'];
-								$brg=mysql_query("select * from realisasi where no_spk='$id'");
+								$nopol=$_GET['nopol'];
+								$brg=mysql_query("select * from realisasi where nopol='$nopol'");
 								$no=1;
 								while($b=mysql_fetch_array($brg)){
 
@@ -85,7 +85,7 @@
 									</tr>		
 									<?php 
 									}
-									$query = "SELECT * FROM realisasi where no_spk='$id'";
+									$query = "SELECT * FROM realisasi where nopol='$nopol'";
 									$query_run = mysql_query($query);
 
 									$biaya_armada= 0;
@@ -101,6 +101,8 @@
 										$pendapatan += $num['pendapatan'];
 										$laba=$pendapatan-$total_biaya;
 										$pm=$laba/$pendapatan*100;
+
+											mysql_query("update truk set biaya='$total_biaya', pendapatan='$pendapatan', laba_rugi='$laba', pm='$pm' where nopol='$nopol'");
 									}
 									?>
 								<tfoot>

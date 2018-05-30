@@ -62,12 +62,12 @@
 									<td><?=$b['nm_truk']?></td>
 									<td><?=$b['nopol']?></td>
 									<td><?=$b['nm_supir']?></td>
-                                    <td><?=$b['biaya']?></td>
-                                    <td><?=$b['pendapatan']?></td>
-                                   <td><?=$b['laba_rugi']?></td>
-                                   <td><?=$b['pm']?></td> 
+                                    <td>Rp.<?=number_format($b['biaya']) ?>,-</td>
+                                        <td>Rp.<?=number_format($b['pendapatan']) ?>,-</td>
+                                        <td>Rp.<?=number_format($b['laba_rugi']) ?>,-</td>
+                                   <td><?=round($b['pm'],2) ?>%</td>
 									<td class="text-center">
-									  <a href="det_truck.php?id=<?=$b['id'];?>" class="btn btn-info">Detail</a>
+									 <a href="realisasi_truk.php?nopol=<?=$b['nopol']; ?>" class="btn btn-info">Realisasi</a>
 									  <a href="edit_truck.php?id=<?=$b['id'];?>" class="btn btn-warning">Edit</a>
 									  <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus_truck.php?id=<?=$b['id']; ?>' }" class="btn btn-danger">Hapus</a>
 									</td>                    

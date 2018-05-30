@@ -1,5 +1,6 @@
 <?php 
 include 'config.php';
+$id=$_POST['id'];
 $nm_truk=$_POST['nm_truk'];
 $nopol=$_POST['nopol'];
 $nm_supir=$_POST['nm_supir'];
