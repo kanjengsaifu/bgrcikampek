@@ -1,8 +1,8 @@
 <?php
 	$id_spk=$_GET['cus'];
-    include '../php/top.php';
-    include '../php/header.php';
-    include '../php/left-sidebar.php'; include '../php/breadcrumbs.php';
+    include 'php/top.php';
+    include 'php/header.php';
+    include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
     ?>
     <!-- Page Content -->
     <div id="page-wrapper">
@@ -28,7 +28,7 @@
 							  $id=$_GET['id'];
 							  $det=mysql_query("select * from spk where id='$id'")or die(mysql_error());
 							  while($d=mysql_fetch_array($det)){
-							  ?>
+							  ?>  
                                 <form action="tmb_spk_act.php" method="post" class="floating-labels ">
                                     <div class="form-group m-b-40">
                                         <input name="no_spk" type="text" class="form-control" id="input1" value="<?=$d['no_spk'] ?>" required><span class="highlight"></span> <span class="bar"></span>
@@ -66,7 +66,7 @@
                                         <input name="biaya" type="text" class="form-control" id="biaya" value="<?=$d['biaya'] ?>" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="biaya">Biaya Proposal</label>
                                     </div>
-
+									
 									<input name="cus" type="hidden" value="<?=$id_spk?>">
 									<input name="id" type="hidden" value="<?=$id?>">
 									<div class="form-group form-actions">
@@ -85,17 +85,17 @@
                 </div>
             </div>
             <!-- /.row -->
-            <?php include '../php/right-sidebar.php';?>
+            <?php include 'php/right-sidebar.php';?>
         </div>
         <!-- /.container-fluid -->
-        <?php include '../php/footer.php';?>
+        <?php include 'php/footer.php';?>
 
     <!-- Sweet-Alert  -->
-    <script src="../../plugins/bower_components/sweetalert/sweetalert.min.js"></script>
-    <script src="../../plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js"></script>
+    <script src="../plugins/bower_components/sweetalert/sweetalert.min.js"></script>
+    <script src="../plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js"></script>
     <!-- Date range Plugin JavaScript -->
-    <script src="../../plugins/bower_components/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../plugins/bower_components/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
     <script>
         // Date Picker
         jQuery('#datepicker-autoclose').datepicker({
@@ -137,9 +137,9 @@
         });
     </script>
     <!--Style Switcher -->
-    <script src="../../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
     <!--Style Switcher -->
-<script src="../../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+<script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
 </body>
 
 </html>

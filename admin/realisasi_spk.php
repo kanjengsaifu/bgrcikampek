@@ -1,8 +1,8 @@
 <?php
 	$cu=$_GET['cus'];
-    include '../php/top.php';
-    include '../php/header.php';
-    include '../php/left-sidebar.php'; include '../php/breadcrumbs.php';
+    include 'php/top.php';
+    include 'php/header.php';
+    include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
 ?>
     <!-- Page Content -->
     <div id="page-wrapper">
@@ -10,7 +10,7 @@
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                     <h4 class="page-title">Data Realisasi SPK</h4> </div>
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
                     <?php echo breadcrumbs(); ?>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -82,8 +82,8 @@
 										<td>Rp.<?=number_format($b['laba']) ?>,-</td>
 										<td><?=round($b['pm'],2) ?>%</td>
 										<td><a href="edit_real_spk.php?&cus=<?=$cu?>&no_spk=<?=$id?>&id=<?=$b['id']?>" class="btn btn-warning">Edit</a></td>
-									</tr>
-									<?php
+									</tr>		
+									<?php 
 									}
 									$query = "SELECT * FROM realisasi where no_spk='$id'";
 									$query_run = mysql_query($query);
@@ -142,19 +142,19 @@
 					</div>
 					<div class="form-group">
 						<label for="armada" class="control-label">Armada:</label>
-						<input name="armada" type="text" class="form-control" id="armada">
+						<input name="armada" type="text" class="form-control" id="armada"> 
 					</div>
 					<div class="form-group">
 						<label for="asal" class="control-label">Asal:</label>
-						<input name="asal" type="text" class="form-control" id="asal">
+						<input name="asal" type="text" class="form-control" id="asal"> 
 					</div>
 					<div class="form-group">
 						<label for="tujuan" class="control-label">Tujuan:</label>
-						<input name="tujuan" type="text" class="form-control" id="tujuan">
+						<input name="tujuan" type="text" class="form-control" id="tujuan"> 
 					</div>
 					<div class="form-group">
 						<label for="party" class="control-label">Party:</label>
-						<input name="party" type="text" class="form-control" id="tujupartyan">
+						<input name="party" type="text" class="form-control" id="tujupartyan"> 
 					</div>
 					<div class="form-group m-b-40">
 						<label for="satuan" class="control-label">Satuan:</label>
@@ -168,23 +168,23 @@
 					</div>
 					<div class="form-group">
 						<label for="nopol" class="control-label">No Polisi:</label>
-						<input name="nopol" type="text" class="form-control" id="nopol">
+						<input name="nopol" type="text" class="form-control" id="nopol"> 
 					</div>
 					<div class="form-group">
 						<label for="no_surjl" class="control-label">No Surat Jalan:</label>
-						<input name="no_surjl" type="text" class="form-control" id="no_surjl">
+						<input name="no_surjl" type="text" class="form-control" id="no_surjl"> 
 					</div>
 					<div class="form-group">
 						<label for="biaya_armada" class="control-label">Biaya Armada:</label>
-						<input name="biaya_armada" type="text" class="form-control" id="biaya_armada">
+						<input name="biaya_armada" type="text" class="form-control" id="biaya_armada"> 
 					</div>
 					<div class="form-group">
 						<label for="operasional_mb" class="control-label">Operasional MB:</label>
-						<input name="operasional_mb" type="text" class="form-control" id="operasional_mb">
+						<input name="operasional_mb" type="text" class="form-control" id="operasional_mb"> 
 					</div>
 					<div class="form-group">
 						<label for="pendapatan" class="control-label">Pendapatan:</label>
-						<input name="pendapatan" type="text" class="form-control" id="pendapatan">
+						<input name="pendapatan" type="text" class="form-control" id="pendapatan"> 
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -194,25 +194,25 @@
 			</form>
 		</div>
 	</div>
-</div>
+</div> 
 <!-- /.modal -->
-            <?php include '../php/right-sidebar.php';?>
+            <?php include 'php/right-sidebar.php';?>
         </div>
         <!-- /.container-fluid -->
-        <?php include '../php/footer.php';?>
-
+        <?php include 'php/footer.php';?>
+		
     <!-- Date range Plugin JavaScript -->
-    <script src="../../plugins/bower_components/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <script src="../../plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
+    <script src="../plugins/bower_components/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
     <!-- start - This is for export functionality only -->
-    <script src="../js/dataTables.buttons.min.js"></script>
-    <script src="../js/buttons.flash.min.js"></script>
-    <script src="../js/jszip.min.js"></script>
-    <script src="../js/pdfmake.min.js"></script>
-    <script src="../js/vfs_fonts.js"></script>
-    <script src="../js/buttons.html5.min.js"></script>
-    <script src="../js/buttons.print.min.js"></script>
+    <script src="js/dataTables.buttons.min.js"></script>
+    <script src="js/buttons.flash.min.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <script src="js/pdfmake.min.js"></script>
+    <script src="js/vfs_fonts.js"></script>
+    <script src="js/buttons.html5.min.js"></script>
+    <script src="js/buttons.print.min.js"></script>
     <!-- end - This is for export functionality only -->
     <script>
         $(document).ready(function () {
@@ -303,9 +303,9 @@
         });
     </script>
     <!--Style Switcher -->
-    <script src="../../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
     <!--Style Switcher -->
-<script src="../../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+<script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
 </body>
 
 </html>

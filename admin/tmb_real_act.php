@@ -1,5 +1,5 @@
-<?php
-include '../config.php';
+<?php 
+include 'config.php';
 $id=$_POST['id'];
 $no_spk=$_POST['no_spk'];
 $tgl_realisasi=$_POST['tgl_realisasi'];
