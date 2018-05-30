@@ -53,9 +53,9 @@
                             <li> <a href="dn.php?dn=<?=$id?>">DN</a> </li>
                         </ul>
                     </li>
-				 <?php
+				 <?php 
 				 }
-				 ?>
+				 ?> 
                 </ul>
             </li>
             <li><a href="kuo.php" class="waves-effect"><i data-icon=")" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">KUO</span></a> </li>
@@ -63,9 +63,9 @@
             <li> <a href="#" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">LAPORAN<span class="fa arrow"></span></span></a>
                 <ul class="nav nav-second-level">
                     <li><a href="laporan_truk.php">LAPORAN TRUK MILIK</a></li>
-                    <li><a href="404.html">LAPORAN OPERASIONAL LOGISTIK</a></li>
-                    <li><a href="404.html">KEGIATAN LOGISTIK</a></li>
-                    <li><a href="404.html">LAPORAN KERUSAKAN</a></li>
+                    <li><a href="404.php">LAPORAN OPERASIONAL LOGISTIK</a></li>
+                    <li><a href="404.php">KEGIATAN LOGISTIK</a></li>
+                    <li><a href="404.php">LAPORAN KERUSAKAN</a></li>
                 </ul>
             </li>
         </ul>
