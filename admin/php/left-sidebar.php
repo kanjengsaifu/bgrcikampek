@@ -49,7 +49,7 @@
 				 ?>
                     <li> <a href="javascript:void(0)" class="waves-effect"><?=$nm_cus?> <span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">
-                            <li> <a href="spk.php?spk=<?=$id?>">SPK</a> </li>
+                            <li> <a href="spk/spk.php?spk=<?=$id?>">SPK</a> </li>
                             <li> <a href="dn.php?dn=<?=$id?>">DN</a> </li>
                         </ul>
                     </li>

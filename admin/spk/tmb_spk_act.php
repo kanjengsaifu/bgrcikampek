@@ -1,5 +1,5 @@
-<?php 
-include 'config.php';
+<?php
+include '../config.php';
 
 $id=$_POST['id'];
 $no_spk=$_POST['no_spk'];
@@ -25,7 +25,7 @@ $tgl_spk_berakhir1    = strtotime($tgl_spk_berakhir1);
 
 $diff   = $tgl_spk_berakhir1 - $tgl_spk_terbit1;
 
-$jangka_waktu= floor($diff / (60 * 60 * 24)); 
+$jangka_waktu= floor($diff / (60 * 60 * 24));
 
 if($_POST['submit']=='Simpan'){
 	mysql_query("insert into spk values('','$no_spk','$no_proposal','$no_surlan','$tgl_spk_terbit','$tgl_spk_berakhir','$jangka_waktu','$asal','$tujuan','$jumlah_rit','$realisasi_rit','$harga_rit','$nilai_spk','$biaya','$laba_rugi','$pm','$id_spk')");

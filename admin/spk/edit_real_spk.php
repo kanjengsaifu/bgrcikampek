@@ -1,9 +1,9 @@
 <?php
 	$cu=$_GET['cus'];
 	$no_spk=$_GET['no_spk'];
-    include 'php/top.php';
-    include 'php/header.php';
-    include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
+    include '../php/top.php';
+    include '../php/header.php';
+    include '../php/left-sidebar.php'; include '../php/breadcrumbs.php';
     ?>
     <!-- Page Content -->
     <div id="page-wrapper">
@@ -29,14 +29,14 @@
 							  $id=$_GET['id'];
 							  $det=mysql_query("select * from realisasi where id='$id'")or die(mysql_error());
 							  while($d=mysql_fetch_array($det)){
-							  ?>  
+							  ?>
                                 <form action="tmb_real_act.php" method="post" class="floating-labels ">
 									<div class="form-group">
 										<label>No SPK</label>
 										<input name="no_spk" type="hidden" class="form-control" value="<?=$d['no_spk'] ?>"><br>
 										<p><h2><b><?=$d['no_spk'] ?></b></h2></p>
 									</div>
-									
+
 									<div class="form-group m-b-40">
 										<input name="tgl_realisasi" type="text" class="form-control mydatepicker" id="tgl_realisasi" value="<?=$d['tgl_realisasi'] ?>" required><span class="highlight"></span> <span class="bar"></span>
 										<label for="tgl_realisasi">Tanggal Realisasi</label>
@@ -87,7 +87,7 @@
                                         <input name="pendapatan" type="text" class="form-control" id="pendapatan" value="<?=$d['pendapatan'] ?>" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="pendapatan">Pendapatan</label>
                                     </div>
-									
+
 									<input name="cus" type="hidden" value="<?=$cu?>">
 									<input name="id" type="hidden" value="<?=$id?>">
 									<div class="form-group form-actions">
@@ -106,17 +106,17 @@
                 </div>
             </div>
             <!-- /.row -->
-            <?php include 'php/right-sidebar.php';?>
+            <?php include '../php/right-sidebar.php';?>
         </div>
         <!-- /.container-fluid -->
-        <?php include 'php/footer.php';?>
+        <?php include '../php/footer.php';?>
 
     <!-- Sweet-Alert  -->
-    <script src="../plugins/bower_components/sweetalert/sweetalert.min.js"></script>
-    <script src="../plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js"></script>
+    <script src="../../plugins/bower_components/sweetalert/sweetalert.min.js"></script>
+    <script src="../../plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js"></script>
     <!-- Date range Plugin JavaScript -->
-    <script src="../plugins/bower_components/timepicker/bootstrap-timepicker.min.js"></script>
-    <script src="../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../../plugins/bower_components/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="../../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
     <script>
         // Date Picker
         jQuery('#datepicker-autoclose').datepicker({
@@ -158,9 +158,9 @@
         });
     </script>
     <!--Style Switcher -->
-    <script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="../../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
     <!--Style Switcher -->
-<script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+<script src="../../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
 </body>
 
 </html>
