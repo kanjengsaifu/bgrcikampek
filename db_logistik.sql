@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.0.4.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: May 27, 2018 at 06:45 AM
--- Server version: 10.1.10-MariaDB
--- PHP Version: 5.5.33
+-- Host: localhost
+-- Generation Time: May 30, 2018 at 06:16 PM
+-- Server version: 5.6.13
+-- PHP Version: 5.4.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,11 +14,13 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `db_logistik`
 --
+CREATE DATABASE IF NOT EXISTS `db_logistik` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `db_logistik`;
 
 -- --------------------------------------------------------
 
@@ -26,12 +28,13 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `uname` varchar(30) NOT NULL,
   `pass` varchar(70) NOT NULL,
-  `foto` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `foto` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `admin`
@@ -46,16 +49,17 @@ INSERT INTO `admin` (`id`, `uname`, `pass`, `foto`) VALUES
 -- Table structure for table `barang`
 --
 
-CREATE TABLE `barang` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `barang` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama` text NOT NULL,
   `jenis` text NOT NULL,
   `suplier` text NOT NULL,
   `modal` int(11) NOT NULL,
   `harga` int(11) NOT NULL,
   `jumlah` int(11) NOT NULL,
-  `sisa` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `sisa` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
 
 --
 -- Dumping data for table `barang`
@@ -85,13 +89,14 @@ INSERT INTO `barang` (`id`, `nama`, `jenis`, `suplier`, `modal`, `harga`, `jumla
 -- Table structure for table `customer`
 --
 
-CREATE TABLE `customer` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `customer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nm_cus` text NOT NULL,
   `alamat` text NOT NULL,
   `npwp` text NOT NULL,
-  `nm_pimpinan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nm_pimpinan` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `customer`
@@ -109,8 +114,8 @@ INSERT INTO `customer` (`id`, `nm_cus`, `alamat`, `npwp`, `nm_pimpinan`) VALUES
 -- Table structure for table `data_nota`
 --
 
-CREATE TABLE `data_nota` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `data_nota` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `no_dn` text NOT NULL,
   `no_spk` text NOT NULL,
   `tgl_dn` text NOT NULL,
@@ -118,8 +123,9 @@ CREATE TABLE `data_nota` (
   `biaya` text NOT NULL,
   `laba_rugi` text NOT NULL,
   `pm` text NOT NULL,
-  `id_customer` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_customer` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `data_nota`
@@ -135,15 +141,16 @@ INSERT INTO `data_nota` (`id`, `no_dn`, `no_spk`, `tgl_dn`, `nilai`, `biaya`, `l
 -- Table structure for table `droping_kuo`
 --
 
-CREATE TABLE `droping_kuo` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `droping_kuo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `tgl_droping` text NOT NULL,
   `no_bukti` text NOT NULL,
   `jumlah` text NOT NULL,
   `realisasi_kuo` text NOT NULL,
   `sisa` text NOT NULL,
-  `no_bkt_pengembalian` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `no_bkt_pengembalian` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `droping_kuo`
@@ -159,12 +166,13 @@ INSERT INTO `droping_kuo` (`id`, `tgl_droping`, `no_bukti`, `jumlah`, `realisasi
 -- Table structure for table `events`
 --
 
-CREATE TABLE `events` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `start_event` datetime NOT NULL,
-  `end_event` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `end_event` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -172,13 +180,14 @@ CREATE TABLE `events` (
 -- Table structure for table `multiuser`
 --
 
-CREATE TABLE `multiuser` (
+CREATE TABLE IF NOT EXISTS `multiuser` (
   `id_user` int(11) NOT NULL,
   `nama_lengkap` varchar(80) NOT NULL,
   `username` varchar(45) NOT NULL,
   `password` varchar(100) NOT NULL,
   `type_user` text NOT NULL,
-  `tgl` datetime NOT NULL
+  `tgl` datetime NOT NULL,
+  PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -186,7 +195,7 @@ CREATE TABLE `multiuser` (
 --
 
 INSERT INTO `multiuser` (`id_user`, `nama_lengkap`, `username`, `password`, `type_user`, `tgl`) VALUES
-(1, 'Ghazali samudra', 'ghazali', 'fc3b3ffac73449f8035b926d9fc9b7a3', 'Admin', '2014-06-26 10:39:52'),
+(1, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Admin', '2014-06-26 10:39:52'),
 (2, 'Andrian Saputra', 'andre', '19984dcaea13176bbb694f62ba6b5b35', 'Editor', '2014-06-26 10:40:53'),
 (3, 'Jamil Ahmad', 'jamil', '0e2cc23df7e37a854499f9d918b0219d', 'User', '2014-06-26 10:41:28');
 
@@ -196,13 +205,14 @@ INSERT INTO `multiuser` (`id_user`, `nama_lengkap`, `username`, `password`, `typ
 -- Table structure for table `pengeluaran`
 --
 
-CREATE TABLE `pengeluaran` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `pengeluaran` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `tanggal` date NOT NULL,
   `keperluan` text NOT NULL,
   `nama` text NOT NULL,
-  `jumlah` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `jumlah` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `pengeluaran`
@@ -217,8 +227,8 @@ INSERT INTO `pengeluaran` (`id`, `tanggal`, `keperluan`, `nama`, `jumlah`) VALUE
 -- Table structure for table `realisasi`
 --
 
-CREATE TABLE `realisasi` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `realisasi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `tgl_realisasi` text NOT NULL,
   `armada` text NOT NULL,
   `no_spk` text NOT NULL,
@@ -233,8 +243,9 @@ CREATE TABLE `realisasi` (
   `total_biaya` text NOT NULL,
   `pendapatan` text NOT NULL,
   `laba` text NOT NULL,
-  `pm` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `pm` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
 -- Dumping data for table `realisasi`
@@ -247,7 +258,9 @@ INSERT INTO `realisasi` (`id`, `tgl_realisasi`, `armada`, `no_spk`, `asal`, `tuj
 (17, '20/05/2018', 'saaa', '111/000/2018', 'saaa', 'asasas', 'TON', 'TON', 'wassas', '123/123', '10000', '30000', '40000', '70000', '30000', '42.857142857143'),
 (18, '20/05/2018', 'saaa', '111/000/2018', 'saaa', 'asasas', 'TON', 'TON', 'wassas', '123/123', '10000', '30000', '40000', '70000', '30000', '42.857142857143'),
 (19, '20/05/2018', 'saaa', '111/000/2018', 'saaa', 'dadadada', 'TON', 'TON', 'wassas', '123/123', '10000', '30000', '40000', '70000', '30000', '42.857142857143'),
-(20, '20/05/2018', 'asdasafds', '111/000', 'asdafasf', 'asffasd', 'TON', 'TON', 'b3543t', '444/555', '30000', '10000', '40000', '200000', '160000', '80');
+(20, '20/05/2018', 'asdasafds', '111/000', 'asdafasf', 'asffasd', 'TON', 'TON', 'b3543t', '444/555', '30000', '10000', '40000', '200000', '160000', '80'),
+(21, '21/05/2018', 'truk milik', '111/000/2018', 'subang', 'cikampek', '5', 'TON', 'T 5627 UE', '90990', '1000000', '10000', '1010000', '23000000', '21990000', '95.608695652174'),
+(22, '22/05/2018', 'truk milik', '111/000/2018', 'subang', 'Subang', '8', 'TON', 'T 5627 UE', '99099', '100000', '100000', '200000', '1000000', '800000', '80');
 
 -- --------------------------------------------------------
 
@@ -255,8 +268,8 @@ INSERT INTO `realisasi` (`id`, `tgl_realisasi`, `armada`, `no_spk`, `asal`, `tuj
 -- Table structure for table `realisasi_dn`
 --
 
-CREATE TABLE `realisasi_dn` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `realisasi_dn` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `no_dn` text NOT NULL,
   `tanggal` text NOT NULL,
   `uraian` text NOT NULL,
@@ -264,8 +277,9 @@ CREATE TABLE `realisasi_dn` (
   `surat_jalan` text NOT NULL,
   `realisasi` text NOT NULL,
   `droping` text NOT NULL,
-  `saldo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `saldo` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
 
 --
 -- Dumping data for table `realisasi_dn`
@@ -284,8 +298,8 @@ INSERT INTO `realisasi_dn` (`id`, `no_dn`, `tanggal`, `uraian`, `no_bukti`, `sur
 -- Table structure for table `realisasi_kuo`
 --
 
-CREATE TABLE `realisasi_kuo` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `realisasi_kuo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `tgl_realisasi_kuo` text NOT NULL,
   `no_bukti_kuo` text NOT NULL,
   `jumlah` text NOT NULL,
@@ -294,8 +308,9 @@ CREATE TABLE `realisasi_kuo` (
   `no_spk` text NOT NULL,
   `asal` text NOT NULL,
   `tujuan` text NOT NULL,
-  `nopol` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nopol` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `realisasi_kuo`
@@ -313,8 +328,8 @@ INSERT INTO `realisasi_kuo` (`id`, `tgl_realisasi_kuo`, `no_bukti_kuo`, `jumlah`
 -- Table structure for table `spk`
 --
 
-CREATE TABLE `spk` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `spk` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `no_spk` text NOT NULL,
   `no_proposal` text NOT NULL,
   `surlan` text NOT NULL,
@@ -330,15 +345,16 @@ CREATE TABLE `spk` (
   `biaya` text NOT NULL,
   `laba_rugi` text NOT NULL,
   `pm` text NOT NULL,
-  `id_customer` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_customer` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `spk`
 --
 
 INSERT INTO `spk` (`id`, `no_spk`, `no_proposal`, `surlan`, `tgl_spk_terbit`, `tgl_spk_berakhir`, `jangka_waktu`, `asal`, `tujuan`, `jumlah_rit`, `realisasi_rit`, `harga_rit`, `nilai_spk`, `biaya`, `laba_rugi`, `pm`, `id_customer`) VALUES
-(10, '111/000/2018', '', '', '20/05/2018', '23/05/2018', '3', 'Riau', 'Subang', '5', '5', '10000', '50000', '400000', '-350000', '-700', '1'),
+(10, '111/000/2018', '88909', '909090', '20/05/2018', '23/05/2018', '3', 'Riau', 'Subang', '5', '7', '5000000', '25000000', '2300000', '2700000', '54', '1'),
 (13, '111/000', '123453234', '', '25/05/2018', '05/05/2018', '2', 'subanag', 'jakarta', '2', '2', '90000', '180000', '100000', '80000', '44.444444444444', '2'),
 (14, '12121', '--- Pilih No Proposal ---', '', '', '', '', '', '', '', '', '', '0', '', '0', '0', '3');
 
@@ -348,8 +364,8 @@ INSERT INTO `spk` (`id`, `no_spk`, `no_proposal`, `surlan`, `tgl_spk_terbit`, `t
 -- Table structure for table `tb_proposal`
 --
 
-CREATE TABLE `tb_proposal` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tb_proposal` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `no_proposal` text NOT NULL,
   `pemb_order` int(255) NOT NULL,
   `perusahaan` int(255) NOT NULL,
@@ -367,8 +383,9 @@ CREATE TABLE `tb_proposal` (
   `tahap_1` int(255) NOT NULL,
   `tahap_2` int(255) NOT NULL,
   `tahap_3` int(255) NOT NULL,
-  `toleransi_susut` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `toleransi_susut` int(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `tb_proposal`
@@ -383,13 +400,14 @@ INSERT INTO `tb_proposal` (`id`, `no_proposal`, `pemb_order`, `perusahaan`, `nm_
 -- Table structure for table `tb_vendor`
 --
 
-CREATE TABLE `tb_vendor` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tb_vendor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nm_vendor` text NOT NULL,
   `alamat` text NOT NULL,
   `npwp` text NOT NULL,
-  `nm_pimpinan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nm_pimpinan` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `tb_vendor`
@@ -405,181 +423,25 @@ INSERT INTO `tb_vendor` (`id`, `nm_vendor`, `alamat`, `npwp`, `nm_pimpinan`) VAL
 -- Table structure for table `truk`
 --
 
-CREATE TABLE `truk` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `truk` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nm_truk` text NOT NULL,
   `nopol` text NOT NULL,
-  `nm_supir` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nm_supir` text NOT NULL,
+  `biaya` text NOT NULL,
+  `pendapatan` text NOT NULL,
+  `laba_rugi` text NOT NULL,
+  `pm` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Indexes for dumped tables
+-- Dumping data for table `truk`
 --
 
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
+INSERT INTO `truk` (`id`, `nm_truk`, `nopol`, `nm_supir`, `biaya`, `pendapatan`, `laba_rugi`, `pm`) VALUES
+(3, 'BGR', 'T 5627 UE', 'koswara', '1210000', '24000000', '22790000', '94.958333333333');
 
---
--- Indexes for table `barang`
---
-ALTER TABLE `barang`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `customer`
---
-ALTER TABLE `customer`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `data_nota`
---
-ALTER TABLE `data_nota`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `droping_kuo`
---
-ALTER TABLE `droping_kuo`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `events`
---
-ALTER TABLE `events`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `multiuser`
---
-ALTER TABLE `multiuser`
-  ADD PRIMARY KEY (`id_user`);
-
---
--- Indexes for table `pengeluaran`
---
-ALTER TABLE `pengeluaran`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `realisasi`
---
-ALTER TABLE `realisasi`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `realisasi_dn`
---
-ALTER TABLE `realisasi_dn`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `realisasi_kuo`
---
-ALTER TABLE `realisasi_kuo`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `spk`
---
-ALTER TABLE `spk`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tb_proposal`
---
-ALTER TABLE `tb_proposal`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tb_vendor`
---
-ALTER TABLE `tb_vendor`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `truk`
---
-ALTER TABLE `truk`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `barang`
---
-ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
---
--- AUTO_INCREMENT for table `customer`
---
-ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `data_nota`
---
-ALTER TABLE `data_nota`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `droping_kuo`
---
-ALTER TABLE `droping_kuo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `events`
---
-ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `pengeluaran`
---
-ALTER TABLE `pengeluaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `realisasi`
---
-ALTER TABLE `realisasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
---
--- AUTO_INCREMENT for table `realisasi_dn`
---
-ALTER TABLE `realisasi_dn`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
---
--- AUTO_INCREMENT for table `realisasi_kuo`
---
-ALTER TABLE `realisasi_kuo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `spk`
---
-ALTER TABLE `spk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
---
--- AUTO_INCREMENT for table `tb_proposal`
---
-ALTER TABLE `tb_proposal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `tb_vendor`
---
-ALTER TABLE `tb_vendor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `truk`
---
-ALTER TABLE `truk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
