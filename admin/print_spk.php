@@ -22,7 +22,7 @@ class PDF extends FPDF {
 	//inisialisasi Header DOkumen PDF
 	function Header() {
 		//load image logo
-		$this->Image('logo/logo.png',1,1,'C');
+		$this->Image('../logo/logo.png',1,1,'C');
 	
 		
 		//setting format font
@@ -118,7 +118,7 @@ $pdf->Cell(6,0.5,': Rp. '.$surat['biaya'],0,1, 'L');
 $pdf->Cell(6,0.5,'Laba Rugi',0,0,'L');
 $pdf->Cell(6,0.5,': Rp. '.$surat['laba_rugi'],0,1, 'L');
 $pdf->Cell(6,0.5,'PM',0,0,'L');
-$pdf->Cell(6,0.5,': '.$surat['pm'],0,1, 'L');
+$pdf->Cell(6,0.5,': '.$surat['pm'].'%',0,1, 'L');
 
 
 

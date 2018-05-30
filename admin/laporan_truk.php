@@ -17,11 +17,11 @@
             <!-- .row -->
             <div class="row">
                 <div class="col-md-4">
-                    <div class="white-box">
+                    <!--div class="white-box">
                         <!-- sample modal content -->
-						<button data-toggle="modal" data-target="#responsive-modal" class="btn btn-default waves-effect"><span class="glyphicon glyphicon-plus"></span>Tambah Truck</button>
+						<!--button data-toggle="modal" data-target="#responsive-modal" class="btn btn-default waves-effect"><span class="glyphicon glyphicon-plus"></span>Tambah Truck</button-->
                         <!-- Button trigger modal -->
-                    </div>
+                    </div-->
                 </div>
             </div>
             <!-- /.row -->
@@ -39,6 +39,10 @@
 										<th>Jenis Truck</th>
 										<th>Nomor Polisi</th>
 										<th>Nama Supir</th>
+                                        <th>Biaya</th>
+                                        <th>Pendapatan</th>
+                                        <th>Laba Rugi</th>
+                                        <th>PM</th>
 										<th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -58,6 +62,10 @@
 									<td><?=$b['nm_truk']?></td>
 									<td><?=$b['nopol']?></td>
 									<td><?=$b['nm_supir']?></td>
+                                    <td><?=$b['biaya']?></td>
+                                    <td><?=$b['pendapatan']?></td>
+                                   <td><?=$b['laba_rugi']?></td>
+                                   <td><?=$b['pm']?></td> 
 									<td class="text-center">
 									  <a href="det_truck.php?id=<?=$b['id'];?>" class="btn btn-info">Detail</a>
 									  <a href="edit_truck.php?id=<?=$b['id'];?>" class="btn btn-warning">Edit</a>
@@ -84,8 +92,8 @@
 			<form action="tmb_trk_act.php" method="post">
 				<div class="modal-body">
 					<div class="form-group">
-						<label for="nm_truk" class="control-label">Jenis Truck:</label>
-						<input name="nm_truk" type="text" class="form-control" id="Jenis Truck"> 
+						<label for="nm_cus" class="control-label">Jenis Truck:</label>
+						<input name="nm_cus" type="text" class="form-control" id="Jenis Truck"> 
 					</div>
 					<div class="form-group">
 						<label for="nopol" class="control-label">Nomor Polisi:</label>

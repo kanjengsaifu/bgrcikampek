@@ -1,4 +1,5 @@
 <?php
+	$cu=$_GET['cus'];
     include 'php/top.php';
     include 'php/header.php';
     include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
@@ -8,7 +9,7 @@
         <div class="container-fluid">
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title">Data Truck</h4> </div>
+                    <h4 class="page-title">Data Realisasi SPK</h4> </div>
                 <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
                     <?php echo breadcrumbs(); ?>
                 </div>
@@ -19,7 +20,7 @@
                 <div class="col-md-4">
                     <div class="white-box">
                         <!-- sample modal content -->
-						<button data-toggle="modal" data-target="#responsive-modal" class="btn btn-default waves-effect"><span class="glyphicon glyphicon-plus"></span>Tambah Truck</button>
+						<button data-toggle="modal" data-target="#responsive-modal" class="btn btn-default waves-effect"><span class="glyphicon glyphicon-plus"></span>Tambah Realisasi SPK</button>
                         <!-- Button trigger modal -->
                     </div>
                 </div>
@@ -30,44 +31,89 @@
 
                 <div class="col-sm-12">
                     <div class="white-box">
-                        <h3 class="box-title m-b-0">Data Truck</h3>
+					     <h3 class="box-title m-b-0"><a href="spk.php?spk=<?=$cu?>" class="btn btn-alt btn-sm btn-default toggle-bordered enable-tooltip" title="Kembali">Kembali</a></h3>
+                        <h3 class="box-title m-b-0">Data Realisasi SPK</h3>
                         <div class="table-responsive">
                             <table id="example23" class="display nowrap" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
 										<th>ID</th>
-										<th>Jenis Truck</th>
-										<th>Nomor Polisi</th>
-										<th>Nama Supir</th>
+										<th>Tanggal Realisasi</th>
+										<th>Armada</th>
+										<th>No SPK</th>
+										<th>Asal</th>
+										<th>Tujuan</th>
+										<th>Party</th>
+										<th>Satuan</th>
+										<th>No Polisi</th>
+										<th>No Surat Jalan</th>
+										<th>Biaya Armada</th>
+										<th>Operasional M/B</th>
+										<th>Total Biaya</th>
+										<th>Pendapatan</th>
+										<th>Laba Rugi</th>
+										<th>PM</th>
 										<th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-								  <?php 
-								  if(isset($_GET['cari'])){
-									$cari=mysql_real_escape_string($_GET['cari']);
-									$brg=mysql_query("select * from truk where nm_truk like '$cari' or nopol like '$cari'");
-								  }else{
-									$brg=mysql_query("select * from truk ");
-								  }
-								  $n=1;
-								  while($b=mysql_fetch_array($brg)){
-								  ?>
-								  <tr>
-									<td class="text-center"><?=$n++?>.</td>
-									<td><?=$b['nm_truk']?></td>
-									<td><?=$b['nopol']?></td>
-									<td><?=$b['nm_supir']?></td>
-									<td class="text-center">
-									  <a href="det_truck.php?id=<?=$b['id'];?>" class="btn btn-info">Detail</a>
-									  <a href="edit_truck.php?id=<?=$b['id'];?>" class="btn btn-warning">Edit</a>
-									  <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus_truck.php?id=<?=$b['id']; ?>' }" class="btn btn-danger">Hapus</a>
-									</td>                    
-								  </tr>
-								  <?php 
-								  }
-								  ?>
-                                </tbody>
+								<?php
+								$id=$_GET['id'];
+								$brg=mysql_query("select * from realisasi where no_spk='$id'");
+								$no=1;
+								while($b=mysql_fetch_array($brg)){
+
+									?>
+									<tr>
+										<td><?=$no++ ?></td>
+										<td><?=$b['tgl_realisasi'] ?></td>
+										<td><?=$b['armada'] ?></td>
+										<td><?=$b['no_spk'] ?></td>
+										<td><?=$b['asal'] ?></td>
+										<td><?=$b['tujuan'] ?></td>
+										<td><?=$b['party'] ?></td>
+										<td><?=$b['satuan'] ?></td>
+										<td><?=$b['nopol'] ?></td>
+										<td><?=$b['no_surjl'] ?></td>
+										<td>Rp.<?=number_format($b['biaya_armada']) ?>,-</td>
+										<td>Rp.<?=number_format($b['operasional_mb']) ?>,-</td>
+										<td>Rp.<?=number_format($b['total_biaya']) ?>,-</td>
+										<td>Rp.<?=number_format($b['pendapatan']) ?>,-</td>
+										<td>Rp.<?=number_format($b['laba']) ?>,-</td>
+										<td><?=round($b['pm'],2) ?>%</td>
+										<td><a href="edit_real_spk.php?&cus=<?=$cu?>&no_spk=<?=$id?>&id=<?=$b['id']?>" class="btn btn-warning">Edit</a></td>
+									</tr>		
+									<?php 
+									}
+									$query = "SELECT * FROM realisasi where no_spk='$id'";
+									$query_run = mysql_query($query);
+
+									$biaya_armada= 0;
+									$operasional_mb= 0;
+									$total_biaya= 0;
+									$pendapatan= 0;
+									$laba= 0;
+									$pm= 0;
+									while ($num = mysql_fetch_assoc ($query_run)) {
+										$biaya_armada += $num['biaya_armada'];
+										$operasional_mb += $num['operasional_mb'];
+										$total_biaya=$biaya_armada+$operasional_mb;
+										$pendapatan += $num['pendapatan'];
+										$laba=$pendapatan-$total_biaya;
+										$pm=$laba/$pendapatan*100;
+									}
+									?>
+								<tfoot>
+									<tr>
+										<td colspan="10"><b>Jumlah</b></td>
+										<td><b>Rp.<?=number_format($biaya_armada)?>,-</b></td>
+										<td><b>Rp.<?=number_format($operasional_mb)?>,-</b></td>
+										<td><b>Rp.<?=number_format($total_biaya)?>,-</b></td>
+										<td><b>Rp.<?=number_format($pendapatan)?>,-</b></td>
+										<td><b>Rp.<?=number_format($laba)?>,-</b></td>
+										<td colspan="2"><b><?=round($pm,2) ?>%</b></td>
+									</tr>
+								</tfoot>
                             </table>
                         </div>
                     </div>
@@ -80,20 +126,65 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h4 class="modal-title">Tambah Truck Baru</h4> </div>
-			<form action="tmb_trk_act.php" method="post">
+				<h4 class="modal-title">Tambah Realisasi SPK</h4> </div>
+			<form action="tmb_real_act.php" method="post">
 				<div class="modal-body">
 					<div class="form-group">
-						<label for="nm_truk" class="control-label">Jenis Truck:</label>
-						<input name="nm_truk" type="text" class="form-control" id="Jenis Truck"> 
+						<label>No SPK</label>
+						<input name="no_spk" type="hidden" class="form-control" value="<?=$id?>">
+						<input name="cus" type="hidden" class="form-control" value="<?=$cu?>">
+						<p><h2><b><?=$id?></b></h2></p>
+					</div>
+
+					<div class="form-group m-b-40">
+						<label for="tgl_realisasi" class="control-label">Tanggal Realisasi:</label>
+						<input name="tgl_realisasi" type="text" class="form-control mydatepicker" id="tgl_realisasi">
 					</div>
 					<div class="form-group">
-						<label for="nopol" class="control-label">Nomor Polisi:</label>
-						<input name="nopol" type="text" class="form-control" id="Nomor Polisi"> 
+						<label for="armada" class="control-label">Armada:</label>
+						<input name="armada" type="text" class="form-control" id="armada"> 
 					</div>
 					<div class="form-group">
-						<label for="nm_supir" class="control-label">Nama Supir:</label>
-						<input name="nm_supir" type="text" class="form-control" id="Nama Supir"> 
+						<label for="asal" class="control-label">Asal:</label>
+						<input name="asal" type="text" class="form-control" id="asal"> 
+					</div>
+					<div class="form-group">
+						<label for="tujuan" class="control-label">Tujuan:</label>
+						<input name="tujuan" type="text" class="form-control" id="tujuan"> 
+					</div>
+					<div class="form-group">
+						<label for="party" class="control-label">Party:</label>
+						<input name="party" type="text" class="form-control" id="tujupartyan"> 
+					</div>
+					<div class="form-group m-b-40">
+						<label for="satuan" class="control-label">Satuan:</label>
+						<select name="satuan" class="form-control p-0" id="satuan" required>
+							<option></option>
+							<option>TON</option>
+							<option>BALLS</option>
+							<option>M3</option>
+							<option>RITASE</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="nopol" class="control-label">No Polisi:</label>
+						<input name="nopol" type="text" class="form-control" id="nopol"> 
+					</div>
+					<div class="form-group">
+						<label for="no_surjl" class="control-label">No Surat Jalan:</label>
+						<input name="no_surjl" type="text" class="form-control" id="no_surjl"> 
+					</div>
+					<div class="form-group">
+						<label for="biaya_armada" class="control-label">Biaya Armada:</label>
+						<input name="biaya_armada" type="text" class="form-control" id="biaya_armada"> 
+					</div>
+					<div class="form-group">
+						<label for="operasional_mb" class="control-label">Operasional MB:</label>
+						<input name="operasional_mb" type="text" class="form-control" id="operasional_mb"> 
+					</div>
+					<div class="form-group">
+						<label for="pendapatan" class="control-label">Pendapatan:</label>
+						<input name="pendapatan" type="text" class="form-control" id="pendapatan"> 
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -110,8 +201,6 @@
         <!-- /.container-fluid -->
         <?php include 'php/footer.php';?>
 		
-    <!-- Date Picker Plugin JavaScript -->
-    <script src="../plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
     <script src="../plugins/bower_components/timepicker/bootstrap-timepicker.min.js"></script>
     <script src="../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
@@ -175,7 +264,6 @@
     </script>
     <script>
         // Date Picker
-        jQuery('.mydatepicker, #datepicker').datepicker();
         jQuery('#datepicker-autoclose').datepicker({
             autoclose: true
             , todayHighlight: true

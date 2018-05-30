@@ -19,7 +19,7 @@
                 <div class="col-md-4">
                     <div class="white-box">
                         <!-- sample modal content -->
-						<button data-toggle="modal" data-target="#responsive-modal" class="btn btn-default waves-effect"><span class="glyphicon glyphicon-plus"></span>Tambah Truck</button>
+						
                         <!-- Button trigger modal -->
                     </div>
                 </div>
@@ -84,8 +84,8 @@
 			<form action="tmb_trk_act.php" method="post">
 				<div class="modal-body">
 					<div class="form-group">
-						<label for="nm_truk" class="control-label">Jenis Truck:</label>
-						<input name="nm_truk" type="text" class="form-control" id="Jenis Truck"> 
+						<label for="nm_cus" class="control-label">Jenis Truck:</label>
+						<input name="nm_cus" type="text" class="form-control" id="Jenis Truck"> 
 					</div>
 					<div class="form-group">
 						<label for="nopol" class="control-label">Nomor Polisi:</label>

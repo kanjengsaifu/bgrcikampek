@@ -4,8 +4,6 @@ $nm_truk=$_POST['nm_truk'];
 $nopol=$_POST['nopol'];
 $nm_supir=$_POST['nm_supir'];
 
-mysql_query("insert into truk values('','$nm_truk','$nopol','$nm_supir')");
-header("location:truck.php");
 
 if($_POST['submit']=='Simpan'){
 	mysql_query("insert into truk values('','$nm_truk','$nopol','$nm_supir')");
