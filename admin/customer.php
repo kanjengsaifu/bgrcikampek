@@ -9,7 +9,7 @@
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                     <h4 class="page-title">Data Customer</h4> </div>
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <?php echo breadcrumbs(); ?>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -44,7 +44,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-								  <?php 
+								  <?php
 								  if(isset($_GET['cari'])){
 									$cari=mysql_real_escape_string($_GET['cari']);
 									$brg=mysql_query("select * from customer where nm_cus like '$cari' or nm_pimpinan like '$cari'");
@@ -64,9 +64,9 @@
 									  <a href="det_cus.php?id_cus=<?=$b['id']; ?>" class="btn btn-info">Detail</a>
 									  <a href="edit_cus.php?id_cus=<?=$b['id']; ?>" class="btn btn-warning">Edit</a>
 									  <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus_cus.php?id_cus=<?=$b['id']; ?>' }" class="btn btn-danger">Hapus</a>
-									</td>                    
+									</td>
 								  </tr>
-								  <?php 
+								  <?php
 								  }
 								  ?>
                                 </tbody>
@@ -87,19 +87,19 @@
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="nm_cus" class="control-label">Nama Customer:</label>
-						<input name="nm_cus" type="text" class="form-control" id="nm_cus"> 
+						<input name="nm_cus" type="text" class="form-control" id="nm_cus">
 					</div>
 					<div class="form-group">
 						<label for="alamat" class="control-label">Alamat:</label>
-						<input name="alamat" type="text" class="form-control" id="alamat"> 
+						<input name="alamat" type="text" class="form-control" id="alamat">
 					</div>
 					<div class="form-group">
 						<label for="npwp" class="control-label">No NPWP:</label>
-						<input name="npwp" type="text" class="form-control" id="npwp"> 
+						<input name="npwp" type="text" class="form-control" id="npwp">
 					</div>
 					<div class="form-group">
 						<label for="nm_pimpinan" class="control-label">Nama Pimpinan:</label>
-						<input name="nm_pimpinan" type="text" class="form-control" id="nm_pimpinan"> 
+						<input name="nm_pimpinan" type="text" class="form-control" id="nm_pimpinan">
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -109,13 +109,13 @@
 			</form>
 		</div>
 	</div>
-</div> 
+</div>
 <!-- /.modal -->
             <?php include 'php/right-sidebar.php';?>
         </div>
         <!-- /.container-fluid -->
         <?php include 'php/footer.php';?>
-		
+
     <!-- Date Picker Plugin JavaScript -->
     <script src="../plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
@@ -123,13 +123,13 @@
     <script src="../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
     <script src="../plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
     <!-- start - This is for export functionality only -->
-    <script src="js/dataTables.buttons.min.js"></script>
-    <script src="js/buttons.flash.min.js"></script>
-    <script src="js/jszip.min.js"></script>
-    <script src="js/pdfmake.min.js"></script>
-    <script src="js/vfs_fonts.js"></script>
-    <script src="js/buttons.html5.min.js"></script>
-    <script src="js/buttons.print.min.js"></script>
+    <script src="assets/js/dataTables.buttons.min.js"></script>
+    <script src="assets/js/buttons.flash.min.js"></script>
+    <script src="assets/js/jszip.min.js"></script>
+    <script src="assets/js/pdfmake.min.js"></script>
+    <script src="assets/js/vfs_fonts.js"></script>
+    <script src="assets/js/buttons.html5.min.js"></script>
+    <script src="assets/js/buttons.print.min.js"></script>
     <!-- end - This is for export functionality only -->
     <script>
         $(document).ready(function () {
