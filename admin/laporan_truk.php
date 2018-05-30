@@ -9,7 +9,7 @@
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                     <h4 class="page-title">Data Truck</h4> </div>
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <?php echo breadcrumbs(); ?>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -21,7 +21,7 @@
                         <!-- sample modal content -->
 						<!--button data-toggle="modal" data-target="#responsive-modal" class="btn btn-default waves-effect"><span class="glyphicon glyphicon-plus"></span>Tambah Truck</button-->
                         <!-- Button trigger modal -->
-                    </div-->
+                    </div>
                 </div>
             </div>
             <!-- /.row -->
@@ -35,19 +35,19 @@
                             <table id="example23" class="display nowrap" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
-										<th>ID</th>
-										<th>Jenis Truck</th>
-										<th>Nomor Polisi</th>
-										<th>Nama Supir</th>
+                    										<th>ID</th>
+                    										<th>Jenis Truck</th>
+                    										<th>Nomor Polisi</th>
+                    										<th>Nama Supir</th>
                                         <th>Biaya</th>
                                         <th>Pendapatan</th>
                                         <th>Laba Rugi</th>
                                         <th>PM</th>
-										<th>Aksi</th>
+                    										<th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-								  <?php 
+								  <?php
 								  if(isset($_GET['cari'])){
 									$cari=mysql_real_escape_string($_GET['cari']);
 									$brg=mysql_query("select * from truk where nm_truk like '$cari' or nopol like '$cari'");
@@ -70,9 +70,9 @@
 									 <a href="realisasi_truk.php?nopol=<?=$b['nopol']; ?>" class="btn btn-info">Realisasi</a>
 									  <a href="edit_truck.php?id=<?=$b['id'];?>" class="btn btn-warning">Edit</a>
 									  <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus_truck.php?id=<?=$b['id']; ?>' }" class="btn btn-danger">Hapus</a>
-									</td>                    
+									</td>
 								  </tr>
-								  <?php 
+								  <?php
 								  }
 								  ?>
                                 </tbody>
@@ -93,15 +93,15 @@
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="nm_cus" class="control-label">Jenis Truck:</label>
-						<input name="nm_cus" type="text" class="form-control" id="Jenis Truck"> 
+						<input name="nm_cus" type="text" class="form-control" id="Jenis Truck">
 					</div>
 					<div class="form-group">
 						<label for="nopol" class="control-label">Nomor Polisi:</label>
-						<input name="nopol" type="text" class="form-control" id="Nomor Polisi"> 
+						<input name="nopol" type="text" class="form-control" id="Nomor Polisi">
 					</div>
 					<div class="form-group">
 						<label for="nm_supir" class="control-label">Nama Supir:</label>
-						<input name="nm_supir" type="text" class="form-control" id="Nama Supir"> 
+						<input name="nm_supir" type="text" class="form-control" id="Nama Supir">
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -111,13 +111,13 @@
 			</form>
 		</div>
 	</div>
-</div> 
+</div>
 <!-- /.modal -->
             <?php include 'php/right-sidebar.php';?>
         </div>
         <!-- /.container-fluid -->
         <?php include 'php/footer.php';?>
-		
+
     <!-- Date Picker Plugin JavaScript -->
     <script src="../plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
