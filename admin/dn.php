@@ -9,7 +9,7 @@
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                     <h4 class="page-title">Data DN</h4> </div>
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
                     <?php echo breadcrumbs(); ?>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -41,13 +41,13 @@
 										<th>Tanggal</th>
 										<th>Nilai</th>
 										<th>Biaya</th>
-										<th>laba Rugi</th>
-										<th>PM</th>
+										<th>laba Rugi</th>		
+										<th>PM</th>		
 										<th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
+                                    <?php 
                                     error_reporting(0);
 									$cus=$_GET['dn'];
 									if(isset($_GET['cari'])){
@@ -69,7 +69,7 @@
 											$laba_rugi=$nilai-$biaya;
 											$pm=$laba_rugi/$nilai*100;
 											mysql_query("update data_nota set biaya='$biaya',laba_rugi='$laba_rugi',pm='$pm' where no_dn='$nodn'");
-										}
+										}				
 										?>
 										<tr>
 											<td><?=$no++?>.</td>
@@ -77,15 +77,15 @@
 											<td><?=$b['no_spk'] ?></td>
 											<td><?=$b['tgl_dn'] ?></td>
 											<td>Rp.<?=number_format($b['nilai']) ?>,-</td>
-											<td>Rp.<?=number_format($b['biaya']) ?>,-
+											<td>Rp.<?=number_format($b['biaya']) ?>,- 
 											<a href="detail_dn.php?cus=<?=$cus?>&no_dn=<?=$nodn?>" class="btn btn-info">Detail</a></td>
 											<td>Rp.<?=number_format($b['laba_rugi']) ?>,-</td>
 											<td><?=round($b['pm'],2) ?>%</td>
 											<td>
 												<a href="edit_dn.php?cus=<?=$cus?>&id=<?=$b['id']?>" class="btn btn-warning">Edit</a>
 											</td>
-										</tr>
-										<?php
+										</tr>		
+										<?php 
 									}
 									?>
                                 </tbody>
@@ -106,7 +106,7 @@
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="no_dn" class="control-label">No DN:</label>
-						<input name="no_dn" type="text" class="form-control" id="no_dn">
+						<input name="no_dn" type="text" class="form-control" id="no_dn"> 
 					</div>
 					<div class="form-group">
 						<label for="no_spk" class="control-label">No SPK:</label>
@@ -127,11 +127,11 @@
 					</div>
 					<div class="form-group">
 						<label for="nilai" class="control-label">Nilai:</label>
-						<input name="nilai" type="text" class="form-control" id="nilai">
+						<input name="nilai" type="text" class="form-control" id="nilai"> 
 					</div>
 					<div class="form-group">
 						<label for="biaya" class="control-label">Biaya:</label>
-						<input name="biaya" type="text" class="form-control" id="biaya">
+						<input name="biaya" type="text" class="form-control" id="biaya"> 
 					</div>
 				</div>
 				<input name="cus" type="hidden" value="<?=$cus?>">
@@ -142,25 +142,25 @@
 			</form>
 		</div>
 	</div>
-</div>
+</div> 
 <!-- /.modal -->
             <?php include 'php/right-sidebar.php';?>
         </div>
         <!-- /.container-fluid -->
         <?php include 'php/footer.php';?>
-
+		
     <!-- Date range Plugin JavaScript -->
     <script src="../plugins/bower_components/timepicker/bootstrap-timepicker.min.js"></script>
     <script src="../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
     <script src="../plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
     <!-- start - This is for export functionality only -->
-    <script src="assets/js/dataTables.buttons.min.js"></script>
-    <script src="assets/js/buttons.flash.min.js"></script>
-    <script src="assets/js/jszip.min.js"></script>
-    <script src="assets/js/pdfmake.min.js"></script>
-    <script src="assets/js/vfs_fonts.js"></script>
-    <script src="assets/js/buttons.html5.min.js"></script>
-    <script src="assets/js/buttons.print.min.js"></script>
+    <script src="js/dataTables.buttons.min.js"></script>
+    <script src="js/buttons.flash.min.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <script src="js/pdfmake.min.js"></script>
+    <script src="js/vfs_fonts.js"></script>
+    <script src="js/buttons.html5.min.js"></script>
+    <script src="js/buttons.print.min.js"></script>
     <!-- end - This is for export functionality only -->
     <script>
         $(document).ready(function () {

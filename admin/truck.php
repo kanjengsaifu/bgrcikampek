@@ -1,4 +1,4 @@
-assets/<?php
+<?php
     include 'php/top.php';
     include 'php/header.php';
     include 'php/left-sidebar.php'; include 'php/breadcrumbs.php';
@@ -9,7 +9,7 @@ assets/<?php
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                     <h4 class="page-title">Data Truck</h4> </div>
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
                     <?php echo breadcrumbs(); ?>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -43,7 +43,7 @@ assets/<?php
                                     </tr>
                                 </thead>
                                 <tbody>
-								  <?php
+								  <?php 
 								  if(isset($_GET['cari'])){
 									$cari=mysql_real_escape_string($_GET['cari']);
 									$brg=mysql_query("select * from truk where nm_truk like '$cari' or nopol like '$cari'");
@@ -62,9 +62,9 @@ assets/<?php
 									  <!--a href="det_truck.php?id=<?=$b['id'];?>" class="btn btn-info">Detail</a-->
 									  <a href="edit_truck.php?id=<?=$b['id'];?>" class="btn btn-warning">Edit</a>
 									  <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus_truck.php?id=<?=$b['id']; ?>' }" class="btn btn-danger">Hapus</a>
-									</td>
+									</td>                    
 								  </tr>
-								  <?php
+								  <?php 
 								  }
 								  ?>
                                 </tbody>
@@ -85,15 +85,15 @@ assets/<?php
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="nm_truk" class="control-label">Jenis Truck:</label>
-						<input name="nm_truk" type="text" class="form-control" id="Jenis Truck">
+						<input name="nm_truk" type="text" class="form-control" id="Jenis Truck"> 
 					</div>
 					<div class="form-group">
 						<label for="nopol" class="control-label">Nomor Polisi:</label>
-						<input name="nopol" type="text" class="form-control" id="Nomor Polisi">
+						<input name="nopol" type="text" class="form-control" id="Nomor Polisi"> 
 					</div>
 					<div class="form-group">
 						<label for="nm_supir" class="control-label">Nama Supir:</label>
-						<input name="nm_supir" type="text" class="form-control" id="Nama Supir">
+						<input name="nm_supir" type="text" class="form-control" id="Nama Supir"> 
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -103,13 +103,13 @@ assets/<?php
 			</form>
 		</div>
 	</div>
-</div>
+</div> 
 <!-- /.modal -->
             <?php include 'php/right-sidebar.php';?>
         </div>
         <!-- /.container-fluid -->
         <?php include 'php/footer.php';?>
-
+		
     <!-- Date Picker Plugin JavaScript -->
     <script src="../plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->
@@ -117,13 +117,13 @@ assets/<?php
     <script src="../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
     <script src="../plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
     <!-- start - This is for export functionality only -->
-    <script src="assets/js/dataTables.buttons.min.js"></script>
-    <script src="assets/js/buttons.flash.min.js"></script>
-    <script src="assets/js/jszip.min.js"></script>
-    <script src="assets/js/pdfmake.min.js"></script>
-    <script src="assets/js/vfs_fonts.js"></script>
-    <script src="assets/js/buttons.html5.min.js"></script>
-    <script src="assets/js/buttons.print.min.js"></script>
+    <script src="js/dataTables.buttons.min.js"></script>
+    <script src="js/buttons.flash.min.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <script src="js/pdfmake.min.js"></script>
+    <script src="js/vfs_fonts.js"></script>
+    <script src="js/buttons.html5.min.js"></script>
+    <script src="js/buttons.print.min.js"></script>
     <!-- end - This is for export functionality only -->
     <script>
         $(document).ready(function () {

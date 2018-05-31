@@ -9,7 +9,7 @@
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                     <h4 class="page-title">Data Realisasi KUO</h4> </div>
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
                     <?php echo breadcrumbs(); ?>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -50,7 +50,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-								<?php
+								<?php 
 								error_reporting(0);
 								$no_bukti=$_GET['no_bukti'];
 								$brg=mysql_query("select * from realisasi_kuo where no_bukti_kuo='$no_bukti'");
@@ -72,12 +72,12 @@
 										<td>
 											<a href="edit_real_kuo.php?id=<?=$b['id']?>&no_bukti=<?=$no_bukti?>" class="btn btn-warning">Edit</a>
 										</td>
-									</tr>
-									<?php
+									</tr>		
+									<?php 
 									}
 									?>
 								</tbody>
-								<?php
+								<?php 
 								$query = "SELECT * FROM realisasi_kuo where no_bukti_kuo='$no_bukti'";
 								$query_run = mysql_query($query);
 
@@ -119,11 +119,11 @@
 					</div>
 					<div class="form-group">
 						<label for="jumlah" class="control-label">Jumlah:</label>
-						<input name="jumlah" type="text" class="form-control" id="jumlah">
+						<input name="jumlah" type="text" class="form-control" id="jumlah"> 
 					</div>
 					<div class="form-group">
 						<label for="uraian" class="control-label">Uraian:</label>
-						<input name="uraian" type="text" class="form-control" id="uraian">
+						<input name="uraian" type="text" class="form-control" id="uraian"> 
 					</div>
 					<div class="form-group m-b-40">
 						<label for="surat_jalan" class="control-label">No Surat Jalan:</label>
@@ -139,7 +139,7 @@
 						</select>
 					</div>
 				</div>
-
+					
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
 					<button name="submit" type="submit" class="btn btn-danger waves-effect waves-light" value="Simpan">Simpan</button>
@@ -147,25 +147,25 @@
 			</form>
 		</div>
 	</div>
-</div>
+</div> 
 <!-- /.modal -->
             <?php include 'php/right-sidebar.php';?>
         </div>
         <!-- /.container-fluid -->
         <?php include 'php/footer.php';?>
-
+		
     <!-- Date range Plugin JavaScript -->
     <script src="../plugins/bower_components/timepicker/bootstrap-timepicker.min.js"></script>
     <script src="../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
     <script src="../plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
     <!-- start - This is for export functionality only -->
-    <script src="assets/js/dataTables.buttons.min.js"></script>
-    <script src="assets/js/buttons.flash.min.js"></script>
-    <script src="assets/js/jszip.min.js"></script>
-    <script src="assets/js/pdfmake.min.js"></script>
-    <script src="assets/js/vfs_fonts.js"></script>
-    <script src="assets/js/buttons.html5.min.js"></script>
-    <script src="assets/js/buttons.print.min.js"></script>
+    <script src="js/dataTables.buttons.min.js"></script>
+    <script src="js/buttons.flash.min.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <script src="js/pdfmake.min.js"></script>
+    <script src="js/vfs_fonts.js"></script>
+    <script src="js/buttons.html5.min.js"></script>
+    <script src="js/buttons.print.min.js"></script>
     <!-- end - This is for export functionality only -->
     <script>
         $(document).ready(function () {
