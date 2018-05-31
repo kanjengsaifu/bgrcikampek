@@ -9,7 +9,7 @@
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                     <h4 class="page-title">Data SPK</h4> </div>
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <?php echo breadcrumbs(); ?>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -54,7 +54,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-									<?php 
+									<?php
 									$cus=$_GET['spk'];
 									if(isset($_GET['cari'])){
 										$cari=mysql_real_escape_string($_GET['cari']);
@@ -91,8 +91,8 @@
 												<a href="edit_spk.php?id=<?=$b['id']?>&cus=<?=$cus?>" class="btn btn-warning">Edit</a>
 												<a href="print_spk.php?idprint=<?=$b['id']?>" target="_blank" class="btn btn-default">Cetak</a>
 											</td>
-										</tr>		
-										<?php 
+										</tr>
+										<?php
 									}
 									?>
                                 </tbody>
@@ -113,11 +113,11 @@
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="no_spk" class="control-label">No SPK:</label>
-						<input name="no_spk" type="text" class="form-control" id="no_spk"> 
+						<input name="no_spk" type="text" class="form-control" id="no_spk">
 					</div>
 					<div class="form-group">
 						<label for="no_proposal" class="control-label">No Proposal:</label>
-						<input name="no_proposal" type="text" class="form-control" id="no_proposal"> 
+						<input name="no_proposal" type="text" class="form-control" id="no_proposal">
 					</div>
 					<div class="form-group m-b-40">
 						<label for="tgl_spk_terbit" class="control-label">Tanggal SPK Terbit:</label>
@@ -129,23 +129,23 @@
 					</div>
 					<div class="form-group">
 						<label for="asal" class="control-label">Asal:</label>
-						<input name="asal" type="text" class="form-control" id="asal"> 
+						<input name="asal" type="text" class="form-control" id="asal">
 					</div>
 					<div class="form-group">
 						<label for="tujuan" class="control-label">Tujuan:</label>
-						<input name="tujuan" type="text" class="form-control" id="tujuan"> 
+						<input name="tujuan" type="text" class="form-control" id="tujuan">
 					</div>
 					<div class="form-group">
 						<label for="jumlah_rit" class="control-label">Jumlah rit:</label>
-						<input name="jumlah_rit" type="text" class="form-control" id="jumlah_rit"> 
+						<input name="jumlah_rit" type="text" class="form-control" id="jumlah_rit">
 					</div>
 					<div class="form-group">
 						<label for="harga_rit" class="control-label">Harga perRit:</label>
-						<input name="harga_rit" type="text" class="form-control" id="harga_rit"> 
+						<input name="harga_rit" type="text" class="form-control" id="harga_rit">
 					</div>
 					<div class="form-group">
 						<label for="biaya" class="control-label">Biaya Proposal:</label>
-						<input name="biaya" type="text" class="form-control" id="biaya"> 
+						<input name="biaya" type="text" class="form-control" id="biaya">
 					</div>
 				</div>
 				<input name="cus" type="hidden" value="<?=$cus?>">
@@ -156,7 +156,7 @@
 			</form>
 		</div>
 	</div>
-</div> 
+</div>
 <!-- /.modal -->
             <?php include 'php/right-sidebar.php';?>
         </div>
@@ -168,13 +168,13 @@
     <script src="../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
     <script src="../plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
     <!-- start - This is for export functionality only -->
-    <script src="js/dataTables.buttons.min.js"></script>
-    <script src="js/buttons.flash.min.js"></script>
-    <script src="js/jszip.min.js"></script>
-    <script src="js/pdfmake.min.js"></script>
-    <script src="js/vfs_fonts.js"></script>
-    <script src="js/buttons.html5.min.js"></script>
-    <script src="js/buttons.print.min.js"></script>
+    <script src="assets/js/dataTables.buttons.min.js"></script>
+    <script src="assets/js/buttons.flash.min.js"></script>
+    <script src="assets/js/jszip.min.js"></script>
+    <script src="assets/js/pdfmake.min.js"></script>
+    <script src="assets/js/vfs_fonts.js"></script>
+    <script src="assets/js/buttons.html5.min.js"></script>
+    <script src="assets/js/buttons.print.min.js"></script>
     <!-- end - This is for export functionality only -->
     <script>
         $(document).ready(function () {
