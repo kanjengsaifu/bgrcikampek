@@ -4,13 +4,10 @@ $id=$_POST['id'];
 $nm_truk=$_POST['nm_truk'];
 $nopol=$_POST['nopol'];
 $nm_supir=$_POST['nm_supir'];
-$biaya=null;
-$pendapatan=null;
-$laba_rugi=null;
-$pm=null;
+
 
 if($_POST['submit']=='Simpan'){
-	mysql_query("insert into truk values('','$nm_truk','$nopol','$nm_supir','$biaya','$pendapatan','$laba_rugi,'$pm')");
+	mysql_query("insert into truk values('','$nm_truk','$nopol','$nm_supir', '', '', '', '')");
 	header("location:truck.php");
 }
 
