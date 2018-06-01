@@ -1,8 +1,8 @@
-<?php 
+<?php
     include 'php/top.php';
     include 'php/header.php';
     include 'php/left-sidebar.php';
-	include 'php/breadcrumbs.php';
+	  include 'php/breadcrumbs.php';
 ?>
     <!-- Page Content -->
     <div id="page-wrapper">

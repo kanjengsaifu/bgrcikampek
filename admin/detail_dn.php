@@ -67,9 +67,24 @@
 										<td>Rp.<?=number_format($b['droping']) ?>,-</td>
 										<td>Rp.<?=number_format($b['saldo']) ?>,-</td>
 										<td>
-											<a href="edit_det_dn.php?cus=<?=$cu?>&id=<?=$b['id']?>&id_dn=<?=$id_dn?>" class="btn btn-warning">Edit</a>
-											<a href="print_spk.php?idprint=<?=$b['id']?>" target="_blank" class="btn btn-default"><span class='glyphicon glyphicon-print'></span>Cetak</a></p>
-									  	<a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus.php?page=detail_dn&cus=<?=$cu?>&id=<?=$b['id']?>&id_dn=<?=$id_dn?>' }" class="btn btn-danger">Hapus</a>
+											<?php
+                        if($type=="admin"){
+                          ?>
+													<a href="edit_det_dn.php?cus=<?=$cu?>&id=<?=$b['id']?>&id_dn=<?=$id_dn?>" class="btn btn-warning">Edit</a>
+													<a href="print_spk.php?idprint=<?=$b['id']?>" target="_blank" class="btn btn-default"><span class='glyphicon glyphicon-print'></span>Cetak</a></p>
+											  	<a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus.php?page=detail_dn&cus=<?=$cu?>&id=<?=$b['id']?>&id_dn=<?=$id_dn?>' }" class="btn btn-danger">Hapus</a>
+                          <?php
+                			  } else if($type=="editor"){
+                          ?>
+													<a href="edit_det_dn.php?cus=<?=$cu?>&id=<?=$b['id']?>&id_dn=<?=$id_dn?>" class="btn btn-warning">Edit</a>
+													<a href="print_spk.php?idprint=<?=$b['id']?>" target="_blank" class="btn btn-default"><span class='glyphicon glyphicon-print'></span>Cetak</a></p>
+                          <?php
+                			  } else{
+                          ?>
+													<a href="edit_det_dn.php?cus=<?=$cu?>&id=<?=$b['id']?>&id_dn=<?=$id_dn?>" class="btn btn-warning">Edit</a>
+                          <?php
+                			  }
+                      ?>
 									</td>
 									</tr>
 									<?php

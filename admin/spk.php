@@ -87,10 +87,24 @@
 											<td>Rp.<?=number_format($b['laba_rugi']) ?>,-</td>
 											<td><?=round($b['pm'],2) ?>%</td>
 											<td>
-												<a href="realisasi_spk.php?id=<?=$b['no_spk']; ?>&cus=<?=$cus?>" class="btn btn-info">Realisasi</a>
-												<a href="edit_spk.php?id=<?=$b['id']?>&cus=<?=$cus?>" class="btn btn-warning">Edit</a>
-                        <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus.php?page=spk&id=<?=$b['id']?>&cus=<?=$cus?>' }" class="btn btn-danger">Hapus</a>
-												
+                      <?php
+                        if($type=="admin"){
+                          ?>
+                          <a href="realisasi_spk.php?id=<?=$b['no_spk']; ?>&cus=<?=$cus?>" class="btn btn-info">Realisasi</a>
+  												<a href="edit_spk.php?id=<?=$b['id']?>&cus=<?=$cus?>" class="btn btn-warning">Edit</a>
+                          <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus.php?page=spk&id=<?=$b['id']?>&cus=<?=$cus?>' }" class="btn btn-danger">Hapus</a>
+                          <?php
+                			  } else if($type=="editor"){
+                          ?>
+                          <a href="realisasi_spk.php?id=<?=$b['no_spk']; ?>&cus=<?=$cus?>" class="btn btn-info">Realisasi</a>
+  												<a href="edit_spk.php?id=<?=$b['id']?>&cus=<?=$cus?>" class="btn btn-warning">Edit</a>
+                          <?php
+                			  } else{
+                          ?>
+                          <a href="realisasi_spk.php?id=<?=$b['no_spk']; ?>&cus=<?=$cus?>" class="btn btn-info">Realisasi</a>
+                          <?php
+                			  }
+                      ?>
 											</td>
 										</tr>
 										<?php

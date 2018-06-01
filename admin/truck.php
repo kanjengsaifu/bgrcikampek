@@ -59,9 +59,20 @@
 									<td><?=$b['nopol']?></td>
 									<td><?=$b['nm_supir']?></td>
 									<td class="text-center">
-									  <!--a href="det_truck.php?id=<?=$b['id'];?>" class="btn btn-info">Detail</a-->
-									  <a href="edit_truck.php?id=<?=$b['id'];?>" class="btn btn-warning">Edit</a>
-									  <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus.php?page=truck&id=<?=$b['id']; ?>' }" class="btn btn-danger">Hapus</a>
+                    <?php
+                      if($type=="admin"){
+                        ?>
+                        <a href="edit_truck.php?id=<?=$b['id'];?>" class="btn btn-warning">Edit</a>
+    									  <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus.php?page=truck&id=<?=$b['id']; ?>' }" class="btn btn-danger">Hapus</a>
+                        <?php
+                      } else if($type=="editor"){
+                        ?>
+                        <a href="edit_truck.php?id=<?=$b['id'];?>" class="btn btn-warning">Edit</a>
+                        <?php
+                      } else{
+
+                      }
+                    ?>
 									</td>
 								  </tr>
 								  <?php
