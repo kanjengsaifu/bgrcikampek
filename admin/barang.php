@@ -9,7 +9,7 @@
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                     <h4 class="page-title">Data Vendor</h4> </div>
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <?php echo breadcrumbs(); ?>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -44,7 +44,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-									<?php 
+									<?php
 									if(isset($_GET['cari'])){
 										$cari=mysql_real_escape_string($_GET['cari']);
 										$brg=mysql_query("select * from tb_vendor where nm_vendor like '$cari' or tgl_spk like '$cari'");
@@ -64,12 +64,12 @@
 									<td>
 										<a href="det_barang.php?id=<?=$b['id']; ?>" class="btn btn-info">Detail</a>
 										<a href="edit.php?id=<?=$b['id']; ?>" class="btn btn-warning">Edit</a>
-										
-										<a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus.php?id=<?=$b['id']; ?>' }" class="btn btn-danger">Hapus</a>
+
+										<a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus.php?page=barang&id=<?=$b['id']; ?>' }" class="btn btn-danger">Hapus</a>
 									</td>
-								  </tr>		
-									<?php 
-									} 
+								  </tr>
+									<?php
+									}
 									?>
                                 </tbody>
                             </table>
@@ -89,19 +89,19 @@
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="nm_cus" class="control-label">Nama Vendor:</label>
-						<input name="nm_cus" type="text" class="form-control" id="Nama Customer"> 
+						<input name="nm_cus" type="text" class="form-control" id="Nama Customer">
 					</div>
 					<div class="form-group">
 						<label for="alamat" class="control-label">Alamat:</label>
-						<input name="alamat" type="text" class="form-control" id="Alamat"> 
+						<input name="alamat" type="text" class="form-control" id="Alamat">
 					</div>
 					<div class="form-group">
 						<label for="npwp" class="control-label">No NPWP:</label>
-						<input name="npwp" type="text" class="form-control" id="No NPWP"> 
+						<input name="npwp" type="text" class="form-control" id="No NPWP">
 					</div>
 					<div class="form-group">
 						<label for="nm_pimpinan" class="control-label">Nama Pimpinan:</label>
-						<input name="nm_pimpinan" type="text" class="form-control" id="Nama Pimpinan"> 
+						<input name="nm_pimpinan" type="text" class="form-control" id="Nama Pimpinan">
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -111,13 +111,13 @@
 			</form>
 		</div>
 	</div>
-</div> 
+</div>
 <!-- /.modal -->
             <?php include 'php/right-sidebar.php';?>
         </div>
         <!-- /.container-fluid -->
         <?php include 'php/footer.php';?>
-		
+
     <!-- Date Picker Plugin JavaScript -->
     <script src="../plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->

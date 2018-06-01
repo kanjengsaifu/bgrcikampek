@@ -10,7 +10,7 @@
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                     <h4 class="page-title">Data Realisasi DN</h4> </div>
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <?php echo breadcrumbs(); ?>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -49,7 +49,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-								<?php 
+								<?php
 								error_reporting(0);
 								$id_dn=$_GET['no_dn'];
 								$brg=mysql_query("select * from realisasi_dn where no_dn='$id_dn'");
@@ -66,10 +66,13 @@
 										<td>Rp.<?=number_format($b['realisasi']) ?>,-</td>
 										<td>Rp.<?=number_format($b['droping']) ?>,-</td>
 										<td>Rp.<?=number_format($b['saldo']) ?>,-</td>
-										<td><a href="edit_det_dn.php?cus=<?=$cu?>&id=<?=$b['id']?>&id_dn=<?=$id_dn?>" class="btn btn-warning">Edit</a>
-										<a href="print_spk.php?idprint=<?=$b['id']?>" target="_blank" class="btn btn-default"><span class='glyphicon glyphicon-print'></span>Cetak</a></p></td>
-									</tr>		
-									<?php 
+										<td>
+											<a href="edit_det_dn.php?cus=<?=$cu?>&id=<?=$b['id']?>&id_dn=<?=$id_dn?>" class="btn btn-warning">Edit</a>
+											<a href="print_spk.php?idprint=<?=$b['id']?>" target="_blank" class="btn btn-default"><span class='glyphicon glyphicon-print'></span>Cetak</a></p>
+									  	<a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus.php?page=detail_dn&cus=<?=$cu?>&id=<?=$b['id']?>&id_dn=<?=$id_dn?>' }" class="btn btn-danger">Hapus</a>
+									</td>
+									</tr>
+									<?php
 									}
 									?>
 								</tbody>
@@ -77,12 +80,12 @@
 									$query = "SELECT * FROM realisasi_dn where no_dn='$id_dn'";
 									$query_run = mysql_query($query);
 
-									
+
 									$realisasi= 0;
 									while ($num = mysql_fetch_assoc ($query_run)) {
 										$realisasi += $num['realisasi'];
 										$droping += $num['droping'];
-										
+
 									}
 									?>
 								<tfoot>
@@ -127,7 +130,7 @@
 					</div>
 					<div class="form-group">
 						<label for="uraian" class="control-label">Uraian:</label>
-						<input name="uraian" type="text" class="form-control" id="uraian"> 
+						<input name="uraian" type="text" class="form-control" id="uraian">
 					</div>
 					<div class="form-group m-b-40">
 						<label for="no_bukti" class="control-label">No Bukti:</label>
@@ -144,11 +147,11 @@
 					</div>
 					<div class="form-group">
 						<label for="realisasi" class="control-label">Realisasi:</label>
-						<input name="realisasi" type="text" class="form-control" id="realisasi"> 
+						<input name="realisasi" type="text" class="form-control" id="realisasi">
 					</div>
 					<div class="form-group">
 						<label for="droping" class="control-label">Dropping:</label>
-						<input name="droping" type="text" class="form-control" id="droping"> 
+						<input name="droping" type="text" class="form-control" id="droping">
 					</div>
 				</div>
 				<input name="cus" type="hidden" value="<?=$cu?>">
@@ -159,13 +162,13 @@
 			</form>
 		</div>
 	</div>
-</div> 
+</div>
 <!-- /.modal -->
             <?php include 'php/right-sidebar.php';?>
         </div>
         <!-- /.container-fluid -->
         <?php include 'php/footer.php';?>
-		
+
     <!-- Date range Plugin JavaScript -->
     <script src="../plugins/bower_components/timepicker/bootstrap-timepicker.min.js"></script>
     <script src="../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>

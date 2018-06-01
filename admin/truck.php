@@ -9,7 +9,7 @@
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                     <h4 class="page-title">Data Truck</h4> </div>
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <?php echo breadcrumbs(); ?>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -43,7 +43,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-								  <?php 
+								  <?php
 								  if(isset($_GET['cari'])){
 									$cari=mysql_real_escape_string($_GET['cari']);
 									$brg=mysql_query("select * from truk where nm_truk like '$cari' or nopol like '$cari'");
@@ -61,10 +61,10 @@
 									<td class="text-center">
 									  <!--a href="det_truck.php?id=<?=$b['id'];?>" class="btn btn-info">Detail</a-->
 									  <a href="edit_truck.php?id=<?=$b['id'];?>" class="btn btn-warning">Edit</a>
-									  <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus_truck.php?id=<?=$b['id']; ?>' }" class="btn btn-danger">Hapus</a>
-									</td>                    
+									  <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus.php?page=truck&id=<?=$b['id']; ?>' }" class="btn btn-danger">Hapus</a>
+									</td>
 								  </tr>
-								  <?php 
+								  <?php
 								  }
 								  ?>
                                 </tbody>
@@ -85,15 +85,15 @@
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="nm_truk" class="control-label">Jenis Truck:</label>
-						<input name="nm_truk" type="text" class="form-control" id="Jenis Truck"> 
+						<input name="nm_truk" type="text" class="form-control" id="Jenis Truck">
 					</div>
 					<div class="form-group">
 						<label for="nopol" class="control-label">Nomor Polisi:</label>
-						<input name="nopol" type="text" class="form-control" id="Nomor Polisi"> 
+						<input name="nopol" type="text" class="form-control" id="Nomor Polisi">
 					</div>
 					<div class="form-group">
 						<label for="nm_supir" class="control-label">Nama Supir:</label>
-						<input name="nm_supir" type="text" class="form-control" id="Nama Supir"> 
+						<input name="nm_supir" type="text" class="form-control" id="Nama Supir">
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -103,13 +103,13 @@
 			</form>
 		</div>
 	</div>
-</div> 
+</div>
 <!-- /.modal -->
             <?php include 'php/right-sidebar.php';?>
         </div>
         <!-- /.container-fluid -->
         <?php include 'php/footer.php';?>
-		
+
     <!-- Date Picker Plugin JavaScript -->
     <script src="../plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- Date range Plugin JavaScript -->

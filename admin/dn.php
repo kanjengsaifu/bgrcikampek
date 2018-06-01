@@ -9,7 +9,7 @@
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                     <h4 class="page-title">Data DN</h4> </div>
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <?php echo breadcrumbs(); ?>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -35,59 +35,60 @@
                             <table id="example23" class="display nowrap" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
-										<th>ID</th>
-										<th>No DN</th>
-										<th>No SPK</th>
-										<th>Tanggal</th>
-										<th>Nilai</th>
-										<th>Biaya</th>
-										<th>laba Rugi</th>		
-										<th>PM</th>		
-										<th>Aksi</th>
+                  										<th>ID</th>
+                  										<th>No DN</th>
+                  										<th>No SPK</th>
+                  										<th>Tanggal</th>
+                  										<th>Nilai</th>
+                  										<th>Biaya</th>
+                  										<th>laba Rugi</th>
+                  										<th>PM</th>
+                  										<th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php 
+                                    <?php
                                     error_reporting(0);
-									$cus=$_GET['dn'];
-									if(isset($_GET['cari'])){
-										$cari=mysql_real_escape_string($_GET['cari']);
-										$brg=mysql_query("select * from data_nota where id_customer='$cus' and tgl_dn like '$cari'");
-									}else{
-										$brg=mysql_query("select * from data_nota where id_customer='$cus'");
-									}
-									$no=1;
-									while($b=mysql_fetch_array($brg)){
-										$nodn = $b['no_dn'];
-										$nilai = $b['nilai'];
-										$query = "SELECT * FROM realisasi_dn where no_dn='$nodn'";
-										$query_run = mysql_query($query);
+                    									$cus=$_GET['dn'];
+                    									if(isset($_GET['cari'])){
+                    										$cari=mysql_real_escape_string($_GET['cari']);
+                    										$brg=mysql_query("select * from data_nota where id_customer='$cus' and tgl_dn like '$cari'");
+                    									}else{
+                    										$brg=mysql_query("select * from data_nota where id_customer='$cus'");
+                    									}
+                    									$no=1;
+                    									while($b=mysql_fetch_array($brg)){
+                    										$nodn = $b['no_dn'];
+                    										$nilai = $b['nilai'];
+                    										$query = "SELECT * FROM realisasi_dn where no_dn='$nodn'";
+                    										$query_run = mysql_query($query);
 
-										$biaya= 0;
-										while ($num = mysql_fetch_assoc ($query_run)) {
-											$biaya += $num['realisasi'];
-											$laba_rugi=$nilai-$biaya;
-											$pm=$laba_rugi/$nilai*100;
-											mysql_query("update data_nota set biaya='$biaya',laba_rugi='$laba_rugi',pm='$pm' where no_dn='$nodn'");
-										}				
-										?>
-										<tr>
-											<td><?=$no++?>.</td>
-											<td><?=$nodn?></td>
-											<td><?=$b['no_spk'] ?></td>
-											<td><?=$b['tgl_dn'] ?></td>
-											<td>Rp.<?=number_format($b['nilai']) ?>,-</td>
-											<td>Rp.<?=number_format($b['biaya']) ?>,- 
-											<a href="detail_dn.php?cus=<?=$cus?>&no_dn=<?=$nodn?>" class="btn btn-info">Detail</a></td>
-											<td>Rp.<?=number_format($b['laba_rugi']) ?>,-</td>
-											<td><?=round($b['pm'],2) ?>%</td>
-											<td>
-												<a href="edit_dn.php?cus=<?=$cus?>&id=<?=$b['id']?>" class="btn btn-warning">Edit</a>
-											</td>
-										</tr>		
-										<?php 
-									}
-									?>
+                    										$biaya= 0;
+                    										while ($num = mysql_fetch_assoc ($query_run)) {
+                    											$biaya += $num['realisasi'];
+                    											$laba_rugi=$nilai-$biaya;
+                    											$pm=$laba_rugi/$nilai*100;
+                    											mysql_query("update data_nota set biaya='$biaya',laba_rugi='$laba_rugi',pm='$pm' where no_dn='$nodn'");
+                    										}
+                    										?>
+                    										<tr>
+                    											<td><?=$no++?>.</td>
+                    											<td><?=$nodn?></td>
+                    											<td><?=$b['no_spk'] ?></td>
+                    											<td><?=$b['tgl_dn'] ?></td>
+                    											<td>Rp.<?=number_format($b['nilai']) ?>,-</td>
+                    											<td>Rp.<?=number_format($b['biaya']) ?>,-
+                    											<a href="detail_dn.php?cus=<?=$cus?>&no_dn=<?=$nodn?>" class="btn btn-info">Detail</a></td>
+                    											<td>Rp.<?=number_format($b['laba_rugi']) ?>,-</td>
+                    											<td><?=round($b['pm'],2) ?>%</td>
+                    											<td>
+                    												<a href="edit_dn.php?cus=<?=$cus?>&id=<?=$b['id']?>" class="btn btn-warning">Edit</a>
+                                            <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus.php?page=dn&id=<?=$b['id']?>&cus=<?=$cus?>' }" class="btn btn-danger">Hapus</a>
+                    											</td>
+                    										</tr>
+                    										<?php
+                    									}
+                    									?>
                                 </tbody>
                             </table>
                         </div>
@@ -106,7 +107,7 @@
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="no_dn" class="control-label">No DN:</label>
-						<input name="no_dn" type="text" class="form-control" id="no_dn"> 
+						<input name="no_dn" type="text" class="form-control" id="no_dn">
 					</div>
 					<div class="form-group">
 						<label for="no_spk" class="control-label">No SPK:</label>
@@ -127,11 +128,11 @@
 					</div>
 					<div class="form-group">
 						<label for="nilai" class="control-label">Nilai:</label>
-						<input name="nilai" type="text" class="form-control" id="nilai"> 
+						<input name="nilai" type="text" class="form-control" id="nilai">
 					</div>
 					<div class="form-group">
 						<label for="biaya" class="control-label">Biaya:</label>
-						<input name="biaya" type="text" class="form-control" id="biaya"> 
+						<input name="biaya" type="text" class="form-control" id="biaya">
 					</div>
 				</div>
 				<input name="cus" type="hidden" value="<?=$cus?>">
@@ -142,13 +143,13 @@
 			</form>
 		</div>
 	</div>
-</div> 
+</div>
 <!-- /.modal -->
             <?php include 'php/right-sidebar.php';?>
         </div>
         <!-- /.container-fluid -->
         <?php include 'php/footer.php';?>
-		
+
     <!-- Date range Plugin JavaScript -->
     <script src="../plugins/bower_components/timepicker/bootstrap-timepicker.min.js"></script>
     <script src="../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>

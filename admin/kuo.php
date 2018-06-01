@@ -9,7 +9,7 @@
             <div class="row bg-title">
                 <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                     <h4 class="page-title">Data KUO</h4> </div>
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                     <?php echo breadcrumbs(); ?>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -46,7 +46,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-									<?php 
+									<?php
 									error_reporting(0);
 									$brg=mysql_query("select * from droping_kuo");
 									$no=1;
@@ -73,9 +73,10 @@
 											<td><?=$b['no_bkt_pengembalian'] ?></td>
 											<td>
 												<a href="edit_kuo.php?no_bukti=<?=$no_bukti?>" class="btn btn-warning">Edit</a>
+                        <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus.php?page=kuo&id=<?=$b['id']?>' }" class="btn btn-danger">Hapus</a>
 											</td>
-										</tr>		
-										<?php 
+										</tr>
+										<?php
 									}
 									?>
                                 </tbody>
@@ -100,18 +101,18 @@
 					</div>
 					<div class="form-group">
 						<label for="no_bukti" class="control-label">No Bukti:</label>
-						<input name="no_bukti" type="text" class="form-control" id="no_bukti"> 
+						<input name="no_bukti" type="text" class="form-control" id="no_bukti">
 					</div>
 					<div class="form-group">
 						<label for="jumlah" class="control-label">Jumlah:</label>
-						<input name="jumlah" type="text" class="form-control" id="jumlah"> 
+						<input name="jumlah" type="text" class="form-control" id="jumlah">
 					</div>
 					<div class="form-group">
 						<label for="no_bkt_pengembalian" class="control-label">No Bukti Pengembalian:</label>
-						<input name="no_bkt_pengembalian" type="text" class="form-control" id="no_bkt_pengembalian"> 
+						<input name="no_bkt_pengembalian" type="text" class="form-control" id="no_bkt_pengembalian">
 					</div>
 				</div>
-				
+
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
 					<button name="submit" type="submit" class="btn btn-danger waves-effect waves-light" value="Simpan">Simpan</button>
@@ -119,13 +120,13 @@
 			</form>
 		</div>
 	</div>
-</div> 
+</div>
 <!-- /.modal -->
             <?php include 'php/right-sidebar.php';?>
         </div>
         <!-- /.container-fluid -->
         <?php include 'php/footer.php';?>
-		
+
     <!-- Date range Plugin JavaScript -->
     <script src="../plugins/bower_components/timepicker/bootstrap-timepicker.min.js"></script>
     <script src="../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
