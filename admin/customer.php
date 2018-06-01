@@ -62,13 +62,13 @@
 									<td><?=$b['nm_pimpinan']?></td>
 									<td>
                     <?php
-                      if($type=="admin"){
+                      if($type=="Admin"){
                         ?>
                         <a href="det_cus.php?id_cus=<?=$b['id']; ?>" class="btn btn-info">Detail</a>
     									  <a href="edit_cus.php?id_cus=<?=$b['id']; ?>" class="btn btn-warning">Edit</a>
     									  <a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus_cus.php?id_cus=<?=$b['id']; ?>' }" class="btn btn-danger">Hapus</a>
                         <?php
-                      } else if($type=="editor"){
+                      } else if($type=="Editor"){
                         ?>
                         <a href="det_cus.php?id_cus=<?=$b['id']; ?>" class="btn btn-info">Detail</a>
     									  <a href="edit_cus.php?id_cus=<?=$b['id']; ?>" class="btn btn-warning">Edit</a>

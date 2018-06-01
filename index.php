@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -44,13 +44,13 @@
 		 $type=$data['type_user'];
 		 $home="./admin";
 		 if($user==$name && $pass==$word){
-			  if($type=="admin"){
+			  if($type=="Admin"){
 				   session_start();
 				   $_SESSION['nama_lengkap']=$nm;
 				   $_SESSION['username']=$name;
 				   $_SESSION['type_user']=$type;
 				   echo '<script>window.location.assign("'.$home.'")</script>';
-			  } else if($type=="editor"){
+			  } else if($type=="Editor"){
 				   session_start();
 				   $_SESSION['nama_lengkap']=$nm;
 				   $_SESSION['username']=$name;
@@ -77,8 +77,8 @@
 	?>
     <div class="white-box">
       <form class="form-horizontal form-material" id="loginform" action="" method="post">
-        <a href="javascript:void(0)" class="text-center db"><img src="./plugins/images/eliteadmin-logo-dark.png" alt="Home" /><br/><img src="./plugins/images/eliteadmin-text-dark.png" alt="Home" /></a>  
-        
+        <a href="javascript:void(0)" class="text-center db"><img src="./plugins/images/eliteadmin-logo-dark.png" alt="Home" /><br/><img src="./plugins/images/eliteadmin-text-dark.png" alt="Home" /></a>
+
         <div class="form-group m-t-40">
           <div class="col-xs-12">
             <input name="username" class="form-control" type="text" required="" placeholder="Username">

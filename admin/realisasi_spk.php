@@ -83,12 +83,12 @@
 										<td><?=round($b['pm'],2) ?>%</td>
 										<td>
 											<?php
-                        if($type=="admin"){
+                        if($type=="Admin"){
                           ?>
 													<a href="edit_real_spk.php?cus=<?=$cu?>&no_spk=<?=$id?>&id=<?=$b['id']?>" class="btn btn-warning">Edit</a>
 													<a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus.php?page=realisasi_spk&cus=<?=$cu?>&no_spk=<?=$id?>&id=<?=$b['id']?>' }" class="btn btn-danger">Hapus</a>
                           <?php
-                			  } else if($type=="editor"){
+                			  } else if($type=="Editor"){
                           ?>
                           <a href="edit_real_spk.php?cus=<?=$cu?>&no_spk=<?=$id?>&id=<?=$b['id']?>" class="btn btn-warning">Edit</a>
                           <?php
