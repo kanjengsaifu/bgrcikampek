@@ -8,7 +8,7 @@ if(!isset($_SESSION['username'])){
 $user=$_SESSION['nama_lengkap'];
 $type=$_SESSION['type_user'];
 ?>
-<!DOCTYPE html>  
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,8 +20,9 @@ $type=$_SESSION['type_user'];
     <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
     <title>BGR SUB CABANG CIKAMPEK</title>
     <!-- Bootstrap Core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="../plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/bower_components/dropify/dist/css/dropify.min.css">
     <!-- Menu CSS -->
     <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
     <!-- Date picker plugins css -->
