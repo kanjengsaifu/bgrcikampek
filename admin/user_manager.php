@@ -14,17 +14,17 @@
     					</div>
     					<!-- /.col-lg-12 -->
     				</div>
-            <!-- .row -->
+            <!-- .row
             <div class="row">
                 <div class="col-md-4">
                     <div class="white-box">
-                        <!-- sample modal content -->
+                        <!-- sample modal content
                         <button data-toggle="modal" data-target="#responsive-modal" class="btn btn-default waves-effect"><span class="glyphicon glyphicon-plus"></span>Tambah User</button>
-                        <!-- Button trigger modal -->
+                        <!-- Button trigger modal
                     </div>
                 </div>
             </div>
-            <!-- /.row -->
+            row -->
                 <!-- .row -->
                 <div id="test" class="row el-element-overlay m-b-40">
                     <div class="col-md-12">
@@ -53,15 +53,29 @@
                                     <div class="el-card-item">
                                         <div class="el-card-avatar el-overlay-1">
                                             <img src="uploads/<?=$row['foto']?>" />
-                                            <div class="el-overlay">
+                                            <!-- /.<div class="el-overlay">
                                                 <ul class="el-info">
                                                     <li><a class="view_data btn default btn-outline" href="reg.php?hapus=<?=$row['id_user']?>"><i class="icon-user-unfollow"></i></a></li>
                                                 </ul>
-                                            </div>
+                                            </div>-->
                                         </div>
                                         <div class="el-card-content">
                                             <h3 class="box-title"><?=$row['nama_lengkap']?></h3>
-                                            <small><?=$row['type_user']?></small>
+                                            <small>
+                                              <?php
+                                              $ty=$row['type_user'];
+                                              $query1 = $koneksi->query("SELECT * FROM customer WHERE id='$ty'");
+                                              $row1 = $query1->fetch_assoc();
+                                                $id_cus=$row1['id'];
+                                                $nm_cus=$row1['nm_cus'];
+                                      				//jika ada datanya
+                                      				if($ty == $id_cus){
+                                      					echo $nm_cus;
+                                              }else{
+                                                echo $ty;
+                                              }
+                                              ?>
+                                            </small>
                                             <br/>
                                         </div>
                                     </div>
