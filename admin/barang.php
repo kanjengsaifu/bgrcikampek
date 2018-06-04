@@ -49,7 +49,7 @@
 										$cari=mysql_real_escape_string($_GET['cari']);
 										$brg=mysql_query("select * from tb_vendor where nm_vendor like '$cari' or tgl_spk like '$cari'");
 									}else{
-										$brg=mysql_query("select * from tb_vendor limit $start, $per_hal");
+										$brg=mysql_query("select * from tb_vendor ");
 									}
 									$no=1;
 									while($b=mysql_fetch_array($brg)){
