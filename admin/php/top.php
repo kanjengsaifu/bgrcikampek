@@ -31,6 +31,8 @@ $foto=$_SESSION['foto'];
     <!-- Daterange picker plugins css -->
     <link href="../plugins/bower_components/timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
     <link href="../plugins/bower_components/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- morris CSS -->
+    <link href="../plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
     <!--alerts CSS -->
     <link href="../plugins/bower_components/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
     <link href="../plugins/bower_components/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />

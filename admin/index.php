@@ -81,16 +81,21 @@
                 <div class="row">
                     <div class="col-md-7 col-lg-9 col-sm-12 col-xs-12">
                         <div class="white-box">
-                            <h3 class="box-title">Yearly Sales</h3>
+                            <h3 class="box-title">Grafik Perhari</h3>
+                            <select id="SalesPeriods" class="form-control">
+                              <option value="1">SPK</option>
+                              <option value="2">DN</option>
+                              <option value="3">KUO</option>
+                            </select>
                             <ul class="list-inline text-right">
                                 <li>
-                                    <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>iPhone</h5> </li>
+                                    <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>Biaya</h5> </li>
                                 <li>
-                                    <h5><i class="fa fa-circle m-r-5" style="color: #fb9678;"></i>iPad</h5> </li>
+                                    <h5><i class="fa fa-circle m-r-5" style="color: #fb9678;"></i>Pendapatan</h5> </li>
                                 <li>
-                                    <h5><i class="fa fa-circle m-r-5" style="color: #9675ce;"></i>iPod</h5> </li>
+                                    <h5><i class="fa fa-circle m-r-5" style="color: #9675ce;"></i>Laba</h5> </li>
                             </ul>
-                            <div id="morris-area-chart" style="height: 340px;"></div>
+                            <div id="Area_chart" style="height: 340px;"></div>
                         </div>
                     </div>
                     <div class="col-md-12 col-lg-3 col-sm-6 col-xs-12">
@@ -141,48 +146,8 @@
 
                 <!--row -->
                 <div class="row">
-                    <div class="col-md-12 col-lg-9 col-sm-12 col-xs-12 pull-right">
-                        <div class="white-box">
-                            <h3 class="box-title">Sales Difference</h3>
-                            <ul class="list-inline text-right">
-                                <li>
-                                    <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>Site A View</h5> </li>
-                                <li>
-                                    <h5><i class="fa fa-circle m-r-5" style="color: #fdc006;"></i>Site B View</h5> </li>
-                            </ul>
-                            <div id="morris-area-chart2" style="height: 370px;"></div>
-                        </div>
-                    </div>
                     <div class="col-md-12 col-lg-3 col-sm-6 col-xs-12">
                         <div class="row">
-                            <div class="col-md-6 col-lg-12">
-                                <div class="white-box m-b-15">
-                                    <h3 class="box-title">Sales Difference</h3>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6 col-xs-6  m-t-30">
-                                            <h1 class="text-info">$647</h1>
-                                            <p class="text-muted">APRIL 2017</p>
-                                            <b>(150 Sales)</b> </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6">
-                                            <div id="sparkline2dash" class="text-center"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-12">
-                                <div class="white-box bg-purple m-b-15">
-                                    <h3 class="text-white box-title">VISIT STATASTICS</h3>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6 col-xs-6  m-t-30">
-                                            <h1 class="text-white">$347</h1>
-                                            <p class="light_op_text">APRIL 2017</p>
-                                            <b class="text-white">(150 Sales)</b> </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-6">
-                                            <div id="sales1" class="text-center"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
