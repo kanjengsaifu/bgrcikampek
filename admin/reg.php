@@ -2,6 +2,13 @@
 include "config.php";
 include "timezone.php";
 
+  //Hapus Truck
+  if(isset($_GET['hapus'])){
+    $id=$_GET['hapus'];
+    mysql_query("delete from multiuser where id_user='$id'");
+    header("location:user_manager.php");
+  }
+
  $nm=$_POST['nama_lengkap'];
  $user=$_POST['user'];
  $pass1=$_POST['pass1'];
@@ -60,4 +67,5 @@ include "timezone.php";
   	echo $e->getMessage();
   	echo '</div>';
   }
+
 ?>

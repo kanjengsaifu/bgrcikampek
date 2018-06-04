@@ -26,7 +26,7 @@
             </div>
             <!-- /.row -->
                 <!-- .row -->
-                <div class="row el-element-overlay m-b-40">
+                <div id="test" class="row el-element-overlay m-b-40">
                     <div class="col-md-12">
                         <h4>Daftar <small>User <br/><code>Lihat Semua Pengguna</code></small></h4>
 
@@ -55,7 +55,7 @@
                                             <img src="uploads/<?=$row['foto']?>" />
                                             <div class="el-overlay">
                                                 <ul class="el-info">
-                                                    <li><a class="view_data btn default btn-outline" href="up.php?hapus=<?=$row['id_user']?>"><i class="icon-user-unfollow"></i></a></li>
+                                                    <li><a class="view_data btn default btn-outline" href="reg.php?hapus=<?=$row['id_user']?>"><i class="icon-user-unfollow"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -294,8 +294,10 @@
 						mimeType:"multipart/form-data"
 					}).done(function(res){ //
 						//$(my_form_id)[0].reset(); //reset form
-						$(result_output).html(res); //output response from server
+						//$(result_output).html(res); //output response from server
 						submit_btn.val("Simpan").prop( "disabled", false); //enable submit button once ajax is done
+            //$('#responsive-modal').modal('hide');
+            window.location.reload(true);
 					});
 				}
 			}
