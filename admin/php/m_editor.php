@@ -13,6 +13,7 @@
                     while($row = $query->fetch_assoc()){
                       $foto=$row['foto'];
                     }
+                  }
                       //menampilkan isi table nomor, nama dan aksi untuk tombol lihat data
                       ?>
                     <div><img src="uploads/<?=$foto?>" alt="user-img" class="img-circle"></div>
