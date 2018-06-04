@@ -42,6 +42,7 @@
 		 $name=$data['username'];
 		 $word=$data['password'];
 		 $type=$data['type_user'];
+		 $foto=$data['foto'];
 		 $home="./admin";
 		 if($user==$name && $pass==$word){
 			  if($type=="Admin"){
@@ -49,18 +50,21 @@
 				   $_SESSION['nama_lengkap']=$nm;
 				   $_SESSION['username']=$name;
 				   $_SESSION['type_user']=$type;
+				   $_SESSION['foto']=$foto;
 				   echo '<script>window.location.assign("'.$home.'")</script>';
 			  } else if($type=="Editor"){
 				   session_start();
 				   $_SESSION['nama_lengkap']=$nm;
 				   $_SESSION['username']=$name;
 				   $_SESSION['type_user']=$type;
+           $_SESSION['foto']=$foto;
 				   echo '<script>window.location.assign("'.$home.'")</script>';
 			  } else{
 				   session_start();
 				   $_SESSION['nama_lengkap']=$nm;
 				   $_SESSION['username']=$name;
 				   $_SESSION['type_user']=$type;
+           $_SESSION['foto']=$foto;
 				   echo '<script>window.location.assign("'.$home.'")</script>';
 			  }
 		 }

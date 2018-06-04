@@ -7,6 +7,7 @@ if(!isset($_SESSION['username'])){
 }
 $user=$_SESSION['nama_lengkap'];
 $type=$_SESSION['type_user'];
+$foto=$_SESSION['foto'];
 ?>
 <!DOCTYPE html>
 <html lang="en">

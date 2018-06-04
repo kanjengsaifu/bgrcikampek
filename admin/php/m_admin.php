@@ -4,18 +4,6 @@
     <div class="sidebar-nav navbar-collapse slimscrollsidebar">
         <div class="user-profile">
             <div class="dropdown user-pro-body">
-              <?php
-              $query = $koneksi->query("SELECT * FROM multiuser where username=$user");
-              //jika ada datanya
-              if($query->num_rows){
-                $no = 1;	// membuat variabel $no untu nomor urut
-                //melakukan perulangan while, membuat variabel $row untuk menyimpan datanya
-                while($row = $query->fetch_assoc()){
-                  $foto=$row['foto'];
-                }
-              }
-                  //menampilkan isi table nomor, nama dan aksi untuk tombol lihat data
-                  ?>
                 <div><img src="uploads/<?=$foto?>" alt="user-img" class="img-circle"></div>
                 <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?=$user?> <span class="caret"></span></a>
                 <ul class="dropdown-menu animated flipInY">
