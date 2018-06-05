@@ -37,20 +37,20 @@
                     <li> <a href="truck.php">TRUK</a> </li>
                 </ul>
             </li>
-       <?php
-       $cus=mysql_query("select * from customer");
-       while($c=mysql_fetch_array($cus)){
-        $ii++;
-       }
-       ?>
+           <?php
+           $cus=mysql_query("select * from customer");
+           while($c=mysql_fetch_array($cus)){
+            $ii++;
+           }
+           ?>
             <li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="F" class="linea-icon linea-software fa-fw"></i> <span class="hide-menu">PRINCIPAL<span class="fa arrow"></span><span class="label label-rouded label-custom pull-right"><?=$ii?></span></span></a>
                 <ul class="nav nav-second-level">
-         <?php
-         $cus=mysql_query("select * from customer");
-         while($c=mysql_fetch_array($cus)){
-          $id=$c['id'];
-          $nm_cus=$c['nm_cus'];
-         ?>
+                   <?php
+                   $cus=mysql_query("select * from customer");
+                   while($c=mysql_fetch_array($cus)){
+                    $id=$c['id'];
+                    $nm_cus=$c['nm_cus'];
+                   ?>
                     <li> <a href="javascript:void(0)" class="waves-effect"><?=$nm_cus?> <span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">
                             <li> <a href="spk.php?spk=<?=$id?>">SPK</a> </li>

@@ -3,6 +3,24 @@
     include 'php/header.php';
     include 'php/left-sidebar.php';
 	  include 'php/breadcrumbs.php';
+      $spk=mysql_query("select * from realisasi");
+      while($s=mysql_fetch_array($spk)){
+       $si++;
+      }
+      $dn=mysql_query("select * from realisasi_dn");
+      while($d=mysql_fetch_array($dn)){
+       $di++;
+      }
+      $kuo=mysql_query("select * from realisasi_kuo");
+      while($k=mysql_fetch_array($kuo)){
+       $ki++;
+      }
+
+      $all=$si+$di+$ki;
+      $ssi=$si/$all*100;
+      $ddi=$di/$all*100;
+      $kki=$ki/$all*100;
+
 ?>
     <!-- Page Content -->
     <div id="page-wrapper">
@@ -23,12 +41,12 @@
                                 <div class="col-lg-3 col-sm-6 row-in-br">
                                     <div class="col-in row">
                                         <div class="col-md-6 col-sm-6 col-xs-6"> <i data-icon="E" class="linea-icon linea-basic"></i>
-                                            <h5 class="text-muted vb">MYNEW CLIENTS</h5> </div>
+                                            <h5 class="text-muted vb">Data SPK</h5> </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6">
-                                            <h3 class="counter text-right m-t-15 text-danger">23</h3> </div>
+                                            <h3 class="counter text-right m-t-15 text-danger"><?=$si?></h3> </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="progress">
-                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?=$ssi?>" aria-valuemin="0" aria-valuemax="100" style="width: <?=$ssi?>%"> <span class="sr-only"><?=$ssi?>% Complete (success)</span> </div>
                                             </div>
                                         </div>
                                     </div>
@@ -36,12 +54,12 @@
                                 <div class="col-lg-3 col-sm-6 row-in-br  b-r-none">
                                     <div class="col-in row">
                                         <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe01b;"></i>
-                                            <h5 class="text-muted vb">NEW PROJECTS</h5> </div>
+                                            <h5 class="text-muted vb">Data DN</h5> </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6">
-                                            <h3 class="counter text-right m-t-15 text-megna">169</h3> </div>
+                                            <h3 class="counter text-right m-t-15 text-megna"><?=$di?></h3> </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="progress">
-                                                <div class="progress-bar progress-bar-megna" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                                <div class="progress-bar progress-bar-megna" role="progressbar" aria-valuenow="<?=$ddi?>" aria-valuemin="0" aria-valuemax="100" style="width: <?=$ddi?>%"> <span class="sr-only"><?=$ddi?>% Complete (success)</span> </div>
                                             </div>
                                         </div>
                                     </div>
@@ -49,12 +67,12 @@
                                 <div class="col-lg-3 col-sm-6 row-in-br">
                                     <div class="col-in row">
                                         <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe00b;"></i>
-                                            <h5 class="text-muted vb">NEW INVOICES</h5> </div>
+                                            <h5 class="text-muted vb">Data KUO</h5> </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6">
-                                            <h3 class="counter text-right m-t-15 text-primary">157</h3> </div>
+                                            <h3 class="counter text-right m-t-15 text-primary"><?=$ki?></h3> </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="progress">
-                                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="<?=$kki?>" aria-valuemin="0" aria-valuemax="100" style="width: <?=$kki?>%"> <span class="sr-only"><?=$kki?>% Complete (success)</span> </div>
                                             </div>
                                         </div>
                                     </div>
@@ -64,10 +82,10 @@
                                         <div class="col-md-6 col-sm-6 col-xs-6"> <i class="linea-icon linea-basic" data-icon="&#xe016;"></i>
                                             <h5 class="text-muted vb">All PROJECTS</h5> </div>
                                         <div class="col-md-6 col-sm-6 col-xs-6">
-                                            <h3 class="counter text-right m-t-15 text-success">431</h3> </div>
+                                            <h3 class="counter text-right m-t-15 text-success"><?=$all?></h3> </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="progress">
-                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"> <span class="sr-only">100% Complete (success)</span> </div>
                                             </div>
                                         </div>
                                     </div>
