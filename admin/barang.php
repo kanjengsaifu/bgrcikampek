@@ -80,9 +80,6 @@
                         <?php
                       }
                     ?>
-										<a href="det_barang.php?id=<?=$b['id']; ?>" class="btn btn-info">Detail</a>
-										<a href="edit.php?id=<?=$b['id']; ?>" class="btn btn-warning">Edit</a>
-										<a onclick="if(confirm('Apakah anda yakin ingin menghapus data ini ??')){ location.href='hapus.php?page=barang&id=<?=$b['id']; ?>' }" class="btn btn-danger">Hapus</a>
 									</td>
 								  </tr>
 									<?php
