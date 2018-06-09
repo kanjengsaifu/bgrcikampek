@@ -27,7 +27,7 @@
 								$no_bukti=mysql_real_escape_string($_GET['no_bukti']);
 								$det=mysql_query("select * from droping_kuo where no_bukti='$no_bukti'")or die(mysql_error());
 								while($d=mysql_fetch_array($det)){
-							  ?>  
+							  ?>
                                 <form action="tmb_kuo_act.php" method="post" class="floating-labels ">
                                     <div class="form-group m-b-40">
                                         <input name="no_bukti" type="text" class="form-control" id="no_bukti" value="<?=$d['no_bukti'] ?>" required><span class="highlight"></span> <span class="bar"></span>
@@ -38,18 +38,14 @@
 										<label for="tgl_droping">Tanggal Dropping</label>
 									</div>
                                     <div class="form-group m-b-40">
-                                        <input name="jangka_waktu" type="text" class="form-control" id="jangka_waktu" value="<?=$d['jangka_waktu'] ?>" required><span class="highlight"></span> <span class="bar"></span>
-                                        <label for="jangka_waktu">Jangka Waktu</label>
-                                    </div>
-                                    <div class="form-group m-b-40">
                                         <input name="jumlah" type="text" class="form-control" id="jumlah" value="<?=$d['jumlah'] ?>" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="jumlah">Jumlah</label>
                                     </div>
                                     <div class="form-group m-b-40">
                                         <input name="no_bkt_pengembalian" type="text" class="form-control" id="no_bkt_pengembalian" value="<?=$d['no_bkt_pengembalian'] ?>" required><span class="highlight"></span> <span class="bar"></span>
-                                        <label for="no_bkt_pengembalian">No Bukti Pengembalian</label>
+                                        <label for="no_bkt_pengembalian">No Bukti setor</label>
                                     </div>
-									
+
 									<div class="form-group form-actions">
 										<div class="col-md-9 col-md-offset-3">
 											<button name="submit" type="submit" class="btn btn-sm btn-primary" value="Update"><i class="fa fa-angle-right"></i> Update</button>

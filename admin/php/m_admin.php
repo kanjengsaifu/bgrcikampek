@@ -67,9 +67,6 @@
             <li> <a href="#" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">LAPORAN<span class="fa arrow"></span></span></a>
                 <ul class="nav nav-second-level">
                     <li><a href="laporan_truk.php">LAPORAN TRUK MILIK</a></li>
-                    <li><a href="404.html">LAPORAN OPERASIONAL LOGISTIK</a></li>
-                    <li><a href="404.html">KEGIATAN LOGISTIK</a></li>
-                    <li><a href="404.html">LAPORAN KERUSAKAN</a></li>
                 </ul>
             </li>
         </ul>

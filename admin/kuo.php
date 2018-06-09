@@ -41,7 +41,7 @@
 										<th>Jumlah</th>
 										<th>Jumlah Realisai</th>
 										<th>Sisa</th>
-										<th>No Bukti Pengembalian</th>
+										<th>No Bukti setor</th>
 										<th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -119,7 +119,7 @@
 						<input name="jumlah" type="text" class="form-control" id="jumlah">
 					</div>
 					<div class="form-group">
-						<label for="no_bkt_pengembalian" class="control-label">No Bukti Pengembalian:</label>
+						<label for="no_bkt_pengembalian" class="control-label">No Bukti setor:</label>
 						<input name="no_bkt_pengembalian" type="text" class="form-control" id="no_bkt_pengembalian">
 					</div>
 				</div>

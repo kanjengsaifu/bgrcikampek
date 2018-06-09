@@ -29,22 +29,26 @@
 							  $id=$_GET['id'];
 							  $det=mysql_query("select * from realisasi where id='$id'")or die(mysql_error());
 							  while($d=mysql_fetch_array($det)){
-							  ?>  
+							  ?>
                                 <form action="tmb_real_act.php" method="post" class="floating-labels ">
 									<div class="form-group">
 										<label>No SPK</label>
 										<input name="no_spk" type="hidden" class="form-control" value="<?=$d['no_spk'] ?>"><br>
 										<p><h2><b><?=$d['no_spk'] ?></b></h2></p>
 									</div>
-									
+
 									<div class="form-group m-b-40">
 										<input name="tgl_realisasi" type="text" class="form-control mydatepicker" id="tgl_realisasi" value="<?=$d['tgl_realisasi'] ?>" required><span class="highlight"></span> <span class="bar"></span>
 										<label for="tgl_realisasi">Tanggal Realisasi</label>
 									</div>
-                                    <div class="form-group m-b-40">
-                                        <input name="armada" type="text" class="form-control" id="armada" value="<?=$d['armada'] ?>" required><span class="highlight"></span> <span class="bar"></span>
-                                        <label for="armada">Armada</label>
-                                    </div>
+																		<div class="form-group m-b-40">
+																				<select name="armada" class="form-control p-0" id="armada" required>
+																					<option></option>
+																					<option>Truk Milik</option>
+																					<option>Vendor</option>
+																				</select><span class="highlight"></span> <span class="bar"></span>
+																				<label for="armada">Armada</label>
+																		</div>
                                     <div class="form-group m-b-40">
                                         <input name="asal" type="text" class="form-control" id="asal" value="<?=$d['asal'] ?>" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="asal">Asal</label>
@@ -59,11 +63,11 @@
                                     </div>
                                     <div class="form-group m-b-40">
                                         <select name="satuan" class="form-control p-0" id="satuan" required>
-											<option></option>
-											<option>TON</option>
-											<option>BALLS</option>
-											<option>M3</option>
-											<option>RITASE</option>
+																					<option></option>
+																					<option>TON</option>
+																					<option>BALLS</option>
+																					<option>M3</option>
+																					<option>RITASE</option>
                                         </select><span class="highlight"></span> <span class="bar"></span>
                                         <label for="satuan">Satuan</label>
                                     </div>
@@ -87,7 +91,11 @@
                                         <input name="pendapatan" type="text" class="form-control" id="pendapatan" value="<?=$d['pendapatan'] ?>" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="pendapatan">Pendapatan</label>
                                     </div>
-									
+                                    <div class="form-group m-b-40">
+                                        <input name="dn" type="text" class="form-control" id="dn" value="<?=$d['dn'] ?>" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="dn">DN</label>
+                                    </div>
+
 									<input name="cus" type="hidden" value="<?=$cu?>">
 									<input name="id" type="hidden" value="<?=$id?>">
 									<div class="form-group form-actions">

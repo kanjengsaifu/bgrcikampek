@@ -53,6 +53,7 @@
 										<th>Pendapatan</th>
 										<th>Laba Rugi</th>
 										<th>PM</th>
+										<th>DN</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -80,6 +81,7 @@
 										<td>Rp.<?=number_format($b['pendapatan']) ?>,-</td>
 										<td>Rp.<?=number_format($b['laba']) ?>,-</td>
 										<td><?=round($b['pm'],2) ?>%</td>
+										<td><?=$b['dn'] ?></td>
 									</tr>
 									<?php
 									}

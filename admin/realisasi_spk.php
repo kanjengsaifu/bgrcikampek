@@ -53,6 +53,7 @@
 										<th>Pendapatan</th>
 										<th>Laba Rugi</th>
 										<th>PM</th>
+										<th>DN</th>
 										<th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -81,6 +82,7 @@
 										<td>Rp.<?=number_format($b['pendapatan']) ?>,-</td>
 										<td>Rp.<?=number_format($b['laba']) ?>,-</td>
 										<td><?=round($b['pm'],2) ?>%</td>
+										<td><?=$b['dn'] ?></td>
 										<td>
 											<?php
                         if($type=="Admin"){
@@ -155,9 +157,13 @@
 						<label for="tgl_realisasi" class="control-label">Tanggal Realisasi:</label>
 						<input name="tgl_realisasi" type="text" class="form-control mydatepicker" id="tgl_realisasi">
 					</div>
-					<div class="form-group">
+					<div class="form-group m-b-40">
 						<label for="armada" class="control-label">Armada:</label>
-						<input name="armada" type="text" class="form-control" id="armada">
+						<select name="armada" class="form-control p-0" id="armada" required>
+							<option></option>
+							<option>Truk Milik</option>
+							<option>Vendor</option>
+						</select>
 					</div>
 					<div class="form-group">
 						<label for="asal" class="control-label">Asal:</label>

@@ -43,11 +43,12 @@
                   										<th>Jangka Waktu</th>
                   										<th>Asal</th>
                   										<th>Tujuan</th>
-                  										<th>Jumlah/rit</th>
+                  										<th>Jumlah Perit</th>
                   										<th>Realisai rit</th>
-                  										<th>Harga/rit</th>
-                  										<th>Nilai SPK</th>
-                  										<th>Biaya</th>
+                  										<th>Biaya Perit</th>
+                  										<th>Harga Perit</th>
+                  										<th>Pendapatan</th>
+                  										<th>Biaya Proposal</th>
                   										<th>Laba Rugi</th>
                   										<th>PM</th>
                   										<th>Aksi</th>
@@ -81,6 +82,7 @@
 											<td><?=$b['tujuan'] ?></td>
 											<td><?=$b['jumlah_rit'] ?></td>
 											<td><?=$b['realisasi_rit'] ?></td>
+											<td>Rp.<?=number_format($b['biaya_rit']) ?>,-</td>
 											<td>Rp.<?=number_format($b['harga_rit']) ?>,-</td>
 											<td>Rp.<?=number_format($b['nilai_spk']) ?>,-</td>
 											<td>Rp.<?=number_format($b['biaya']) ?>,-</td>
@@ -155,12 +157,12 @@
 						<input name="jumlah_rit" type="text" class="form-control" id="jumlah_rit">
 					</div>
 					<div class="form-group">
-						<label for="harga_rit" class="control-label">Harga perRit:</label>
-						<input name="harga_rit" type="text" class="form-control" id="harga_rit">
+						<label for="biaya_rit" class="control-label">Biaya perRit:</label>
+						<input name="biaya_rit" type="text" class="form-control" id="biaya_rit">
 					</div>
 					<div class="form-group">
-						<label for="biaya" class="control-label">Biaya Proposal:</label>
-						<input name="biaya" type="text" class="form-control" id="biaya">
+						<label for="harga_rit" class="control-label">Harga perRit:</label>
+						<input name="harga_rit" type="text" class="form-control" id="harga_rit">
 					</div>
 				</div>
 				<input name="cus" type="hidden" value="<?=$cus?>">

@@ -28,7 +28,7 @@
 							  $id=$_GET['id'];
 							  $det=mysql_query("select * from spk where id='$id'")or die(mysql_error());
 							  while($d=mysql_fetch_array($det)){
-							  ?>  
+							  ?>
                                 <form action="tmb_spk_act.php" method="post" class="floating-labels ">
                                     <div class="form-group m-b-40">
                                         <input name="no_spk" type="text" class="form-control" id="input1" value="<?=$d['no_spk'] ?>" required><span class="highlight"></span> <span class="bar"></span>
@@ -59,14 +59,14 @@
                                         <label for="jumlah_rit">Jumlah Rit</label>
                                     </div>
                                     <div class="form-group m-b-40">
+                                        <input name="biaya_rit" type="text" class="form-control" id="biaya_rit" value="<?=$d['biaya_rit'] ?>" required><span class="highlight"></span> <span class="bar"></span>
+                                        <label for="biaya_rit">Biaya Rit</label>
+                                    </div>
+                                    <div class="form-group m-b-40">
                                         <input name="harga_rit" type="text" class="form-control" id="harga_rit" value="<?=$d['harga_rit'] ?>" required><span class="highlight"></span> <span class="bar"></span>
                                         <label for="harga_rit">Harga perRit</label>
                                     </div>
-                                    <div class="form-group m-b-40">
-                                        <input name="biaya" type="text" class="form-control" id="biaya" value="<?=$d['biaya'] ?>" required><span class="highlight"></span> <span class="bar"></span>
-                                        <label for="biaya">Biaya Proposal</label>
-                                    </div>
-									
+
 									<input name="cus" type="hidden" value="<?=$id_spk?>">
 									<input name="id" type="hidden" value="<?=$id?>">
 									<div class="form-group form-actions">
